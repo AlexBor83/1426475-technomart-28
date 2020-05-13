@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Алексей Бородачев](https://up.htmlacademy.ru/htmlcss/28/user/1426475).
-* Наставник: [Сергей Зубов] (https://htmlacademy.ru/profile/serj)
+* Наставник: [Сергей Зубов](https://htmlacademy.ru/profile/serj)
 
 ---
 
