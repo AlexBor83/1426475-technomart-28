@@ -8,22 +8,22 @@
 
 <body>
   <header>
-    <a href="index.html">
+    <a class="logo-header" href="index.html">
       <img src="img/logo_technomart.svg" width="108" height="18" alt="Техномарт">
     </a>
     <!--<a href="blank.html">Поиск:</a>-->
-    <a href="blank.html">Закладки</a>
-    <a href="blank.html">Корзина</a>
-    <a href="blank.html">Оформить заказ</a>
+    <a class="bookmarks-header" href="blank.html">Закладки</a>
+    <a class="basket-header" href="blank.html">Корзина</a>
+    <a class="pay-header" href="blank.html">Оформить заказ</a>
 
-    <p>
+    <p class="quote--header">
       Интернет-магазин
       строительных материалов
       и инструментов для ремонта
     </p>
-    <div>
-      <a href="tel:+7(812)555-05-55">+7 (812) 555-05-55</a>
-      <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+    <div class="contacts-header">
+      <a class="tel-header" href="tel:+7(812)555-05-55">+7 (812) 555-05-55</a>
+      <p class="adres-header">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
     </div>
     <div>
       <a href="blank.html">Равшан Джамшутович</a>
@@ -74,10 +74,59 @@
       <li>Перфораторы</li>
     </ul>
     <h1>Перфораторы</h1>
+
     <section>
-      <h2>Фильтр</h2>
-      <!--Будет фильтр-->
+      <h2>фильтр:</h2>
+      <form action="https://echo.htmlacademy.ru" method="GET">
+        <fieldset>
+          <legend>производители</legend>
+          <ul>
+            <li>
+              <label>
+                <input type="checkbox" name="bosh" checked>bosh
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="interscol">интерскол
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="makita" checked>makita
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="dewalt">dewalt
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="hitachi">hitachi
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>питание</legend>
+          <ul>
+            <li>
+              <label>
+                <input type="radio" name="nutrition" value="Аккумуляторные" checked>Аккумуляторные
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="nutrition" value="Сетевые">Сетевые
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <button type="submit">Показать</button>
+      </form>
     </section>
+
     <section>
       <h2>Сортировка:</h2>
       <ul>
@@ -295,6 +344,13 @@
       <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
     </p>
   </footer>
+  <!--Модальное окно с сообщением о добавлении в корзину сделал section незнаю правильно или нет, и тот же вопрос по крестику чтоб закрыть окно-->
+  <section class="form-in-basket">
+    <h2>Товар добавлен в корзину</h2>
+    <a href="blank.html">oформить заказ</a>
+    <a href="catalog.html">продолжить покупки</a>
+  </section>
+
 </body>
 
 </html>
