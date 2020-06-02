@@ -1,0 +1,93 @@
+
+/* еще не делал*/
+:root {
+
+}
+
+body {
+    min-width: 960px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cuprum', 'PT Sans', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    color: black;
+    background-color: white;
+}
+
+  .top-header {
+    background-color:#293449
+}
+
+.logo-header {
+    background-color: #EE3643;
+  
+}
+
+.main-header { 
+    background-image: url("../img/header.png");
+    background-position: 0 0; 
+    background-repeat: repeat;
+}
+
+.quote-header {
+    font-style: Italic;
+    font-size: 16px; 
+    line-height: 23px;
+    color: #EE3643;
+}
+
+
+
+/* Карточка товара*/
+
+.catalog {
+
+
+}
+
+.catalog-item {
+
+
+}
+
+.catalog-card {
+
+   
+}
+
+.catalog-card-title a {
+    font-style: bold;
+    font-size: 18px; 
+    line-height: 20px;
+    color: black;
+}
+
+.catalog-card-price {
+    
+    color: #A9A9A9;
+    font-style: bold;
+    font-size: 17px; 
+    line-height: 18px;
+
+
+}
+
+.catalog-card-discount {
+    font-style: bold;
+    font-size: 17px; 
+    line-height: 18px;
+    color: #FFFFFF;
+    background-color: #EE3643  
+}
+
+.buy-button {
+
+
+}
+
+.bookmark-button {
+
+
+}

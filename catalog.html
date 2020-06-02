@@ -73,9 +73,9 @@
       </li>
       <li>Перфораторы</li>
     </ul>
-    <h1>Перфораторы</h1>
+    <h1>Перфораторы</h1>/
 
-    <section class="filter-catalog">
+    <section class="filter">
       <h2>фильтр:</h2>
       <!--Форм с ползунком-->
       <form action="https://echo.htmlacademy.ru" method="GET">
@@ -128,10 +128,10 @@
       </form>
     </section>
 
-    <section class="filter">
+    <section class="sorting">
       <h2>Сортировка:</h2>
-      <ul>
-        <li class="filter red">
+      <ul class="sorting-list">
+        <li>
           <a href="blank.html">По цене</a>
         </li>
         <li>
@@ -141,12 +141,12 @@
           <a href="blank.html">По функционалу</a>
         </li>
       </ul>
-      <a href="blank.html">По возрастанию</a>
-      <a href="blank.html">По убыванию</a>
+      <a class="sorting-up" href="blank.html">По возрастанию</a>
+      <a class="sorting-down" href="blank.html">По убыванию</a>
     </section>
     <section>
       <h2 class="visually-hidden">Перфораторы Bosh</h2>
-      <ul class="catalog-bosh">
+      <ul class="catalog">
         <li>
           <section>
             <h3>
@@ -324,14 +324,14 @@
     </p>
     <section class="social">
       <h2 class="visually-hidden">Social</h2>
-      <ul>
-        <li>
+      <ul class="social-list">
+        <li class="social-button">
           <a href="blank.html">Вконтакте</a>
         </li>
-        <li>
+        <li class="social-button">
           <a href="blank.html">Фейсбук</a>
         </li>
-        <li>
+        <li class="social-button">
           <a href="blank.html">Инстаграм</a>
         </li>
       </ul>
@@ -348,9 +348,9 @@
 
   <section class="form-basket">
     <h2>Товар добавлен в корзину</h2>
-    <a href="blank.html">oформить заказ</a>
-    <a href="catalog.html">продолжить покупки</a>
-    <button type="button">закрыть</button>
+    <a class="button button-buy" href="blank.html">oформить заказ</a>
+    <a class="button button-next" href="catalog.html">продолжить покупки</a>
+    <button class="close" type="button">закрыть</button>
   </section>
 
 </body>
