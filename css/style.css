@@ -38,6 +38,13 @@ body {
     color: #EE3643;
 }
 
+.popular-tools h2{
+    font-size: 30px; 
+    line-height: 30px;
+    color: #32425C;
+
+}
+
 
 
 /* Карточка товара*/
@@ -79,7 +86,8 @@ body {
     font-size: 17px; 
     line-height: 18px;
     color: #FFFFFF;
-    background-color: #EE3643  
+    background-color: #EE3643;
+    text-decoration: none;  
 }
 
 .buy-button {
