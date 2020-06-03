@@ -1,28 +1,43 @@
 
-/* еще не делал*/
+/* Пока добавил все цвета из макета */
 :root {
-
+    --basic-red: #EE3643;
+    --basic-green: #63A63E;
+    --basic-grey: #3D546F;
+    --basic-greylight: #C5C5C5;
+    --basic-background: #F1F5F7;
+    --basic-wight: #FFFFFF;
+    --basic-black: #000000;
+    --special-ylellow: #FFBF47;
+    --special-blue: #3BBCE3;
+    --special-lilac: #DC91D8;
+    --special-greenlight: #8ED78F;
+    --special-yellowlight: #FFD180;
+    --special-success: #5FBB2D;
+    --special-error: #BA2732;
+    --special-greylight: #EAEAEA;     
 }
 
 body {
     min-width: 960px;
     margin: 0;
     padding: 0;
-    font-family: 'Cuprum', 'PT Sans', sans-serif;
-    font-size: 18px;
+    font-family: "Cuprum", "PT Sans", sans-serif;
+    font-size: 14px;
     line-height: 24px;
-    font-weight: 700;
-    color: black;
-    background-color: white;
+    font-weight: 400;
+    color: var(--basic-black);
+    background-color: var(--basic-wight);
 }
 
-  .top-header {
-    background-color:#293449
+.top-header {
+    background-color: var(--basic-grey);
 }
 
+/* Вопрос с тенью и размером */
 .logo-header {
-    background-color: #EE3643;
-  
+    background-color: var(--basic-red);
+    box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);     
 }
 
 .main-header { 
@@ -35,7 +50,7 @@ body {
     font-style: Italic;
     font-size: 16px; 
     line-height: 23px;
-    color: #EE3643;
+    color: var(--basic-red);
 }
 
 .popular-tools h2{
