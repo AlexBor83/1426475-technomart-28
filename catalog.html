@@ -7,7 +7,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap"
     rel="stylesheet">
-  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/Normalize.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -23,7 +23,6 @@
       <a class="pay-header" href="blank.html">Оформить заказ</a>
     </div>
 
-
     <div class="main-header">
       <p class="quote-header">
         Интернет-магазин
@@ -34,11 +33,11 @@
         <a href="tel:+7(812)555-05-55">+7 (812) 555-05-55</a>
         <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </div>
-      <div class="registration-header">
+      <div class="user">
         <a href="blank.html">Равшан Джамшутович</a>
-        <a href="blank.html">выйти</a>
+        <a class="exit" href="blank.html" aria-label="выйти">выйти</a>
       </div>
-      <div class="user-header">
+      <div class="user-cabinet">
         <a href="blank.html">Мои заказы</a>
         <a href="blank.html">Личный кабинет</a>
       </div>
@@ -83,36 +82,35 @@
       </li>
       <li>Перфораторы</li>
     </ul>
-    <h1>Перфораторы</h1>/
-
+    <h1 class="name-page">Перфораторы</h1>
     <section class="filter">
-      <h2>фильтр:</h2>
+      <h2 class="filter-title">фильтр:</h2>
       <!--Форм с ползунком-->
       <form action="https://echo.htmlacademy.ru" method="GET">
         <fieldset>
-          <legend>производители</legend>
-          <ul>
-            <li>
+          <legend class="legend">производители:</legend>
+          <ul> 
+            <li class="filter-checkbox">
               <label>
                 <input type="checkbox" name="bosh" checked>bosh
               </label>
             </li>
-            <li>
+            <li class="filter-checkbox">
               <label>
                 <input type="checkbox" name="interscol">интерскол
               </label>
             </li>
-            <li>
+            <li class="filter-checkbox">
               <label>
                 <input type="checkbox" name="makita" checked>makita
               </label>
             </li>
-            <li>
+            <li class="filter-checkbox">
               <label>
                 <input type="checkbox" name="dewalt">dewalt
               </label>
             </li>
-            <li>
+            <li class="filter-checkbox">
               <label>
                 <input type="checkbox" name="hitachi">hitachi
               </label>
@@ -120,21 +118,21 @@
           </ul>
         </fieldset>
         <fieldset>
-          <legend>питание</legend>
+          <legend class="legend">питание:</legend>
           <ul>
-            <li>
+            <li class="filter-radio-button">
               <label>
                 <input type="radio" name="nutrition" value="Аккумуляторные" checked>Аккумуляторные
               </label>
             </li>
-            <li>
+            <li class="filter-radio-button">
               <label>
                 <input type="radio" name="nutrition" value="Сетевые">Сетевые
               </label>
             </li>
           </ul>
         </fieldset>
-        <button type="submit">Показать</button>
+        <button class="filter-button button" type="submit">Показать</button>
       </form>
     </section>
 
@@ -154,10 +152,10 @@
       <a class="sorting-up" href="blank.html">По возрастанию</a>
       <a class="sorting-down" href="blank.html">По убыванию</a>
     </section>
-    <section>
+    <section class="popular-tools tools">
       <h2 class="visually-hidden">Перфораторы Bosh</h2>
       <ul class="catalog">
-        <li>
+        <li class="catalog-item">
           <section class="catalog-card">
             <h3 class="catalog-card-title">
               <a href="blank.html">Перфоратор BOSCH BFG 6000</a>
@@ -291,6 +289,7 @@
   </main>
 
   <footer>
+    <div class="main-footer">
     <a class="logo-footer" href="index.html">
       <img src="img/logo_technomart.svg" width="138" height="23" alt="Техномарт">
     </a>
@@ -329,31 +328,35 @@
         <a href="blank.html">Спецпредложения</a>
       </li>
     </ul>
-    <p class="text-footer">
-      &copy; 2010–2019 Компания «Техномарт» Все права защищены
-    </p>
-    <section class="social">
-      <h2 class="visually-hidden">Social</h2>
-      <ul class="social-list">
-        <li class="social-button">
-          <a href="blank.html">Вконтакте</a>
-        </li>
-        <li class="social-button">
-          <a href="blank.html">Фейсбук</a>
-        </li>
-        <li class="social-button">
-          <a href="blank.html">Инстаграм</a>
-        </li>
-      </ul>
-    </section>
-    <p class="text-footer">
-      Обратная связь:
-      <a href="malito:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-    </p>
-    <p class="text-footer">
-      Разработано —
-      <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
-    </p>
+    </div>
+    <div class="bottom-footer">
+      <p class="text-footer">
+        &copy; 2010–2019 Компания «Техномарт».
+        Все права защищены
+      </p>
+      <section class="social">
+        <h2 class="visually-hidden">Social</h2>
+        <ul class="social-list">
+          <li class="social-button">
+            <a href="blank.html">Вконтакте</a>
+          </li>
+          <li class="social-button">
+            <a href="blank.html">Фейсбук</a>
+          </li>
+          <li class="social-button">
+            <a href="blank.html">Инстаграм</a>
+          </li>
+        </ul>
+      </section>
+      <p class="text-footer">
+        Обратная связь:
+        <a href="malito:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+      </p>
+      <p class="text-footer">
+        Разработано —
+        <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
+      </p>
+    </div>
   </footer>
 
   <section class="form-basket">

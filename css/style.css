@@ -3,7 +3,7 @@
 :root {
     --basic-red: #EE3643;
     --basic-green: #63A63E;
-    --basic-grey: #3D546F;
+    --basic-grey: #32425C;
     --basic-greylight: #C5C5C5;
     --basic-background: #F1F5F7;
     --basic-wight: #FFFFFF;
@@ -14,8 +14,11 @@
     --special-greenlight: #8ED78F;
     --special-yellowlight: #FFD180;
     --special-success: #5FBB2D;
-    --special-error: #BA2732;
-    --special-greylight: #EAEAEA;     
+    --special-red: #BA2732;
+    --special-grey: #293449;
+    --special-greydark:#1D2739;
+    --special-greylight: #EAEAEA;
+    --special-wight: #F3F7F9;     
 }
 
 body {
@@ -30,20 +33,81 @@ body {
     background-color: var(--basic-wight);
 }
 
-.top-header {
-    background-color: var(--basic-grey);
+a {
+    text-decoration: none;
+    /*color: var(--basic-wight);*/
 }
 
-/* Вопрос с тенью и размером */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+/*Верх header*/
+.top-header {
+    background-color: var(--special-grey);
+    font-size: 18px;
+    line-height: 24px;    
+}
+
+.top-header a{
+    color: var(--basic-wight);
+    text-align: center;
+ }
+
+/* Вопрос с тенью нужно ее цвет в root gthtyjcbnm и дальше цвета RGBA из-за  прозрачности
+размер логотипа тут и в footor задаю через ширину и всоту, т.к некто не будет добавлять больше текста в логотип? */
 .logo-header {
     background-color: var(--basic-red);
-    box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);     
+    box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+    width: 220px;
+    height: 47px;
+
+}
+/* в стайлгайд указано что меняется цвет только при клике, нужно добавлять фокус, или наведение и есть фокус по нажатию tab? */
+.logo-header:active,
+.logo-header:focus {
+    background-color: var(--special-red);
+    box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
 }
 
+.bookmarks-header:active,
+.basket-header:active {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.pay-header {
+    background-color: var(--basic-green);
+}
+
+.pay-header:focus {
+    background-color: var(--special-success);
+}
+
+.pay-header:active {
+    background-color: var(--basic-green);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*Основной header*/
 .main-header { 
+    background-color: var(--basic-background);
     background-image: url("../img/header.png");
-    background-position: 0 0; 
-    background-repeat: repeat;
+    background-position: center, 0 0; 
+    background-repeat: no-repeat, repeat;
+    text-align: center;
+ 
 }
 
 .quote-header {
@@ -53,64 +117,376 @@ body {
     color: var(--basic-red);
 }
 
-.popular-tools h2{
-    font-size: 30px; 
+.contacts-header a {
+    color: var(--basic-red);
+    font-size: 21px;
     line-height: 30px;
-    color: #32425C;
+    border: 3px solid var(--basic-wight);
+}
 
+.contacts-header p {
+    color: var(--basic-grey);
+    font-size: 14px;
+    line-height: 24px; 
+}
+
+.registration a {
+    background-color: var(--basic-wight);
+    color: var(--basic-black);
+    font-size: 21px;
+    line-height: 21px; 
+}
+
+.registration a:focus,
+.registration a:hover{
+    color: var(--basic-red);
+}
+
+.registration a:active{
+    color: var(--basic-greylight);
+}
+
+/* как менять цвета у эконок user и выход */
+
+.user {
+    background-color: var(--basic-wight);
+    background-image: url(../img/user_icon.svg);
+    background-position: 320px center ;
+    background-repeat: no-repeat;
 }
 
 
 
-/* Карточка товара*/
+.user a {
+    color: var(--basic-black) ;
+    font-size: 21px;
+    line-height: 21px;
+    
+}
+
+.user a:active{
+    color: var(--basic-greylight)
+}
+
+
+/*Вопрос почему не видно эконку если я убераю тест у (a class="exit")? */
+.user .exit {
+    background-image: url(../img/input_output_icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.navigation-header {
+    list-style: none;
+    background-color: var(--basic-grey);
+    box-shadow: inset 0px -5px 0px var(--special-grey);
+}
+
+.navigation-header a {
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--basic-wight);
+}
+
+.navigation-header a:focus,
+.navigation-header a:hover{
+    background-color: var(--special-grey)
+}
+
+.navigation-header a:active{
+    background-color: var(--special-greydark);
+    opacity: 0.5;
+}
+
+.name-page {
+    background-color: var(--basic-background);
+    background-image: url("../img/header.png");
+    background-position: center, 0 0; 
+    background-repeat: no-repeat, repeat;
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+/*Фильтр каталога*/
+
+.legend {
+    font-size: 17px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.filter ul {
+    list-style: none;
+    font-size: 15px;
+    line-height: 19px;
+    text-transform: uppercase;
+}
+
+/*Не пойму как сделать отключеные checkbox и radio-button
+и их значки */
+.filter-checkbox:disabled + label,
+.filter-radio-button:disabled + label {
+    cursor: default;
+    opacity: 0.4;
+    color: var(--basic-red);
+}
+
+
+/*
+.products-services {
+
+}
+
+.slider {
+
+}
+
+.popular-tools h2{
+    font-size: 30px; 
+    line-height: 30px;
+    
+}
+
+Карточка товара. 
+Разметку каталога надо будет делать на гридах и стилизацию делать потом
+чтобы при наведении карточка менялась и на другю и добавлялись кнопки и красная плашка в углу карточки с надписью NEW
 
 .catalog {
-
 
 }
 
 .catalog-item {
 
-
 }
 
 .catalog-card {
-
    
-}
+}*/
 
 .catalog-card-title a {
     font-style: bold;
     font-size: 18px; 
     line-height: 20px;
-    color: black;
+    color: var(--basic-black);
 }
 
 .catalog-card-price {
     
-    color: #A9A9A9;
+    color: var(--basic-greylight);
     font-style: bold;
     font-size: 17px; 
     line-height: 18px;
-
-
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .catalog-card-discount {
     font-style: bold;
     font-size: 17px; 
     line-height: 18px;
-    color: #FFFFFF;
-    background-color: #EE3643;
-    text-decoration: none;  
+    color: var(--basic-wight);
+    background-color: var(--basic-red);
+    text-transform: uppercase;
+    text-align: center;  
 }
-
+/*
 .buy-button {
-
 
 }
 
 .bookmark-button {
 
+}
+
+.popular-manufacturers {
+
 
 }
+
+.services {
+
+}
+*/
+
+.company h2,
+.contacts h2 {
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.company p,
+.contacts p{
+    font-family: PT Sans;
+    font-size: 13px;
+    line-height: 24px;    
+}
+
+.texnomart-delivery {
+    font-size: 18px;
+    line-height: 24px;
+    list-style: none;
+}
+
+/*Button*/
+
+.button {
+    font: inherit;
+    text-align: center;
+    background-color: var(--basic-red);
+    color: var(--basic-wight);
+    border: none;
+    vertical-align: middle;
+}
+
+.button:active{
+    background-color: var(--special-red);
+}
+
+/* footer*/
+.main-footer {
+    background-color: var(--basic-grey);
+    background-image: url("../img/footer.png");
+    background-position: center, 0 0;
+    background-repeat: no-repeat, repeat;
+    text-align: center;
+}
+
+.logo-footer {
+    background-color: var(--basic-red);
+    width: 220px;
+    height: 68px;
+    box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24); 
+}
+
+.contacts-footer {
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--special-wight);
+}
+
+.contacts-footer a {
+    color: var(--special-wight)
+}
+
+.navigation-footer {
+    list-style: none;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.navigation-footer a {
+    color: var(--basic-background);
+}
+
+.navigation-servic-footer {
+    list-style: none;
+    font-size: 18px;
+    line-height: 24px;    
+}
+
+.navigation-servic-footer a {
+    color: var(--special-yellowlight);
+}
+
+.navigation-footer a:focus,
+.navigation-footer a:hover,
+.navigation-servic-footer a:focus,
+.navigation-servic-footer a:hover {
+    text-decoration: underline;
+}
+
+.navigation-footer a:active,
+.navigation-servic-footer a:active {
+    mix-blend-mode: normal; 
+    opacity: 0.5;
+}
+
+.bottom-footer {
+    text-align: center;
+    color: var(--basic-wight);
+    background-color: var(--special-greydark);
+    background-image: url("../img/footer_bottom.png");
+    background-position: center, 0 0;
+    background-repeat: no-repeat, repeat;
+}
+
+.text-footer {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.text-footer a {
+    color: var(--special-ylellow);
+}
+
+.text-footer a:hover,
+.text-footer a:focus {
+    text-decoration: underline;
+}
+
+.text-footer a:active,
+.text-footer a:active {
+    color: var(--special-red);
+}
+
+.social-button {
+list-style: none;
+}
+
+.social-button a {
+    color: var(--basic-wight);
+    text-align: center;
+   
+}
+
+/* form-call-back  */
+
+.form-call-back {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.name label,
+.email label,
+.form-text label {
+    font: inherit;
+    font-size: 18px; 
+    line-height: 24px;
+    color: var(--basic-black);
+}
+
+.name input, 
+.email input, 
+.form-text textarea {
+    font: inherit;
+    background-color: transparent; 
+    border: 2px solid var(--basic-greylight);
+    border-radius: 2px;
+}
+
+.bottom-form {
+    background-color: var(--basic-greylight);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
