@@ -8,6 +8,7 @@
     --basic-background: #F1F5F7;
     --basic-wight: #FFFFFF;
     --basic-black: #000000;
+    --basic-shadow: rgba(0, 0, 0, 0.24);
     --special-ylellow: #FFBF47;
     --special-blue: #3BBCE3;
     --special-lilac: #DC91D8;
@@ -18,7 +19,9 @@
     --special-grey: #293449;
     --special-greydark:#1D2739;
     --special-greylight: #EAEAEA;
-    --special-wight: #F3F7F9;     
+    --special-wight: #F3F7F9;
+    --special-shadow: rgba(0, 0, 0, 0.15);
+    --header-active: rgba(255, 255, 255, 0.5);    
 }
 
 body {
@@ -35,8 +38,7 @@ body {
 
 a {
     text-decoration: none;
-    /*color: var(--basic-wight);*/
-}
+    }
 
 img {
     max-width: 100%;
@@ -66,25 +68,22 @@ img {
     text-align: center;
  }
 
-/* Вопрос с тенью нужно ее цвет в root gthtyjcbnm и дальше цвета RGBA из-за  прозрачности
-размер логотипа тут и в footor задаю через ширину и всоту, т.к некто не будет добавлять больше текста в логотип? */
 .logo-header {
     background-color: var(--basic-red);
-    box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+    box-shadow: inset 0px -5px 0px var(--basic-shadow);
     width: 220px;
     height: 47px;
 
 }
-/* в стайлгайд указано что меняется цвет только при клике, нужно добавлять фокус, или наведение и есть фокус по нажатию tab? */
-.logo-header:active,
-.logo-header:focus {
+
+.logo-header:active {
     background-color: var(--special-red);
-    box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+    box-shadow: inset 0px -5px 0px var(--basic-shadow);
 }
 
 .bookmarks-header:active,
 .basket-header:active {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--header-active);
 }
 
 .pay-header {
@@ -97,7 +96,7 @@ img {
 
 .pay-header:active {
     background-color: var(--basic-green);
-    color: rgba(255, 255, 255, 0.5);
+    color:var(--header-active);
 }
 
 /*Основной header*/
@@ -146,36 +145,51 @@ img {
     color: var(--basic-greylight);
 }
 
-/* как менять цвета у эконок user и выход */
-
 .user {
     background-color: var(--basic-wight);
-    background-image: url(../img/user_icon.svg);
-    background-position: 320px center ;
     background-repeat: no-repeat;
 }
 
-
-
-.user a {
+.user-enter,
+.user-exit {
     color: var(--basic-black) ;
     font-size: 21px;
     line-height: 21px;
-    
+    position: relative;     
 }
 
-.user a:active{
+/* Сделал пока эконки через псевдо элемент
+нужно еще сделать цвет */
+
+.user-enter::before {
+    content: "";
+    background-image: url(../img/user_icon.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 20px; 
+    height: 18px;
+    position: absolute;
+    top: 4px;
+    left: -30px;
+}
+
+.user-exit::before {
+    content: "";
+    background-image: url(../img/input_output_icon.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 20px; 
+    height: 18px;
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    transform: rotate(180deg);
+}
+
+.user-enter:active,
+.user-exit:active {
     color: var(--basic-greylight)
 }
-
-
-/*Вопрос почему не видно эконку если я убераю тест у (a class="exit")? */
-.user .exit {
-    background-image: url(../img/input_output_icon.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 
 .navigation-header {
     list-style: none;
@@ -224,16 +238,6 @@ img {
     line-height: 19px;
     text-transform: uppercase;
 }
-
-/*Не пойму как сделать отключеные checkbox и radio-button
-и их значки */
-.filter-checkbox:disabled + label,
-.filter-radio-button:disabled + label {
-    cursor: default;
-    opacity: 0.4;
-    color: var(--basic-red);
-}
-
 
 /*
 .products-services {
@@ -359,7 +363,7 @@ img {
     background-color: var(--basic-red);
     width: 220px;
     height: 68px;
-    box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24); 
+    box-shadow: inset 0px -5px 0px var(--basic-shadow); 
 }
 
 .contacts-footer {
@@ -443,24 +447,24 @@ list-style: none;
    
 }
 
-/* form-call-back  */
+/* form-popup  */
 
-.form-call-back {
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+.form-popup {
+    box-shadow: 0px 4px 20px var(--special-shadow);
 }
 
-.name label,
-.email label,
-.form-text label {
+.name-popup label,
+.email-popup label,
+.text-popup label {
     font: inherit;
     font-size: 18px; 
     line-height: 24px;
     color: var(--basic-black);
 }
 
-.name input, 
-.email input, 
-.form-text textarea {
+.name-popup input, 
+.email-popup input, 
+.text-popup textarea {
     font: inherit;
     background-color: transparent; 
     border: 2px solid var(--basic-greylight);
@@ -470,23 +474,3 @@ list-style: none;
 .bottom-form {
     background-color: var(--basic-greylight);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
