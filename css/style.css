@@ -1,5 +1,5 @@
 
-/* Пока добавил все цвета из макета */
+
 :root {
     --basic-red: #EE3643;
     --basic-green: #63A63E;
@@ -53,9 +53,6 @@ html {
     height: 100%;
 }
 
-
-
-
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -71,7 +68,15 @@ html {
 .top-header {
     background-color: var(--special-grey);
     font-size: 18px;
-    line-height: 24px;    
+    line-height: 24px;
+    margin-bottom: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; 
+       
+    outline: 5px solid rgba(0, 255, 0, 0.3);
+  
 }
 
 .top-header a{
@@ -117,7 +122,18 @@ html {
     background-position: center, 0 0; 
     background-repeat: no-repeat, repeat;
     text-align: center;
- 
+    width: 100%;
+
+    outline: 5px solid red 
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr min-content;
+    row-gap: 69px;
+        
+    margin-bottom: 40px;
+    outline: 5px solid blueviolet;
 }
 
 .quote-header {
@@ -125,7 +141,20 @@ html {
     font-size: 16px; 
     line-height: 23px;
     color: var(--basic-red);
+    outline: 5px solid blue;
+    margin-right: 24px;
+    margin-left: 30px;
+    width: 197px;
+    min-height: 71px;
+    margin: 0px;
 }
+
+.contacts-header {
+    outline: 5px solid green;
+    width: 270px;
+    height: 71px;    
+}
+
 
 .contacts-header a {
     color: var(--basic-red);
@@ -138,6 +167,13 @@ html {
     color: var(--basic-grey);
     font-size: 14px;
     line-height: 24px; 
+}
+
+.registration {    
+    width: 281px;
+    height: 71px;
+
+    outline: 5px solid yellow;
 }
 
 .registration a {
@@ -159,6 +195,8 @@ html {
 .user {
     background-color: var(--basic-wight);
     background-repeat: no-repeat;
+    width: 281px;
+    height: 71px;
 }
 
 .user-enter,
@@ -202,10 +240,36 @@ html {
     color: var(--basic-greylight)
 }
 
+.user-cabinet a {
+    color: var(--basic-grey) ;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.user-cabinet a:focus,
+.user-cabinet a:hover{
+    color: var(--basic-red);
+}
+
+.user-cabinet a:active {
+    color: var(--basic-greylight);
+}
+
 .navigation-header {
     list-style: none;
+    margin: 0; 
+    padding: 0;
     background-color: var(--basic-grey);
     box-shadow: inset 0px -5px 0px var(--special-grey);
+    outline: 5px solid indigo;
+    outline-offset: -5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 16px;
+    padding-bottom: 20px;
+
 }
 
 .navigation-header a {
@@ -224,6 +288,16 @@ html {
     opacity: 0.5;
 }
 
+.container {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    outline: 5px solid violet;
+    outline-offset: 5px;
+  }
+
+  
 .name-page {
     background-color: var(--basic-background);
     background-image: url("../img/header.png");
@@ -231,10 +305,32 @@ html {
     background-repeat: no-repeat, repeat;
     font-size: 30px;
     line-height: 30px;
+    padding: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 29px;
+    margin: 0px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
 /*Фильтр каталога*/
+
+.catalog-all { 
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-content: start;   
+   
+    outline: 5px solid rgba(255, 0, 0, 0.7);
+  
+  }
+
+.filter {
+
+    outline-offset: -5px;
+    outline: 5px solid green;
+}
+
 
 .legend {
     font-size: 17px;
@@ -248,6 +344,24 @@ html {
     font-size: 15px;
     line-height: 19px;
     text-transform: uppercase;
+}
+
+/*Button*/
+
+.button {
+    font: inherit;
+    text-align: center;
+    background-color: var(--basic-red);
+    color: var(--basic-wight);
+    border: none;
+    vertical-align: middle;
+    text-transform: uppercase;
+    display: inline-block;
+
+}
+
+.button:active{
+    background-color: var(--special-red);
 }
 
 /*
@@ -265,21 +379,61 @@ html {
     
 }
 
-Карточка товара. 
-Разметку каталога надо будет делать на гридах и стилизацию делать потом
-чтобы при наведении карточка менялась и на другю и добавлялись кнопки и красная плашка в углу карточки с надписью NEW
 
-.catalog {
+Карточка товара. 
+Разметку каталога сделал на гридах, внутри карточки сделаю в следующем задании
+Как сделатьчтобы при наведении карточка менялась и на другю и добавлялись кнопки - "купить" и "в закладки" и красная плашка в углу карточки с надписью NEW п. 3.17 и 3.18 Тех задания
+как сделать кнопка купить стрелочкой как в макете  */
+
+
+.filter-result {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows:
+    min-content
+    1fr
+    min-content;
+    align-content: start;
+    padding: 0px;
+    margin: 0px;
+
+    outline-offset: -5px;
+    outline: 5px solid blue; 
+}
+
+.sorting {
+    grid-column: 1 / -1;
+    outline-offset: -5px;
+      
+    outline: 5px solid rgba(0, 255, 0, 0.7);
 
 }
 
-.catalog-item {
-
+.catalog-list {
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    grid-template-rows:
+    318px
+    318px
+    318px;
+    align-content: start;
+    list-style: none;
+    grid-gap: 20px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 20px;
+    
+    outline-offset: -5px;
+    outline: 5px solid red;
 }
 
 .catalog-card {
-   
-}*/
+    width: 220px;
+    min-height: 318px;
+
+    outline-offset: -5px;
+    outline: 5px solid red;
+}
 
 .catalog-card-title a {
     font-style: bold;
@@ -307,17 +461,43 @@ html {
     text-transform: uppercase;
     text-align: center;  
 }
-/*
-.buy-button {
 
+.page {
+    grid-column: 1 / -1;
+    outline-offset: -5px;
+    outline: 5px solid rgba(0, 255, 0, 0.7);
+    margin-bottom: 59px;
+}
+
+.buy-button {
+    font-size: 14px;
+    line-height: 18px;
+    font: inherit;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    display: inline-block;
+    color: var(--basic-wight);
+    background-color: var(--basic-green);
 }
 
 .bookmark-button {
+    font-size: 14px;
+    line-height: 18px;    
+    font: inherit;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    display: inline-block;
+    color: var(--basic-grey);
+    background-color: var(--basic-wight);
+    border: 3px solid var(--basic-green);
 
 }
 
-.popular-manufacturers {
+/*
 
+.popular-manufacturers {
 
 }
 
@@ -325,72 +505,138 @@ html {
 
 }
 */
+.columns-company {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+
+    outline: 5px solid rgba(255, 0, 0, 0.7);
+    outline-offset: 5px;
+}
+
+.contacts .big-maps {
+    display: none;
+}
+
+.company {
+    width: 460px;   
+    outline: 5px solid green;
+}
+
+.contacts {
+    width: 300px;
+
+    outline: 5px solid blue;
+}
 
 .company h2,
 .contacts h2 {
     font-size: 30px;
     line-height: 30px;
     text-transform: uppercase;
+    margin: 0px;
+    margin-bottom: 24px;
+    margin-top: 70px;
 }
 
 .company p,
 .contacts p{
     font-family: PT Sans;
     font-size: 13px;
-    line-height: 24px;    
+    line-height: 24px;
+    width: 478px;    
 }
 
 .texnomart-delivery {
     font-size: 18px;
     line-height: 24px;
     list-style: none;
+    margin-bottom: 12px;
 }
 
-/*Button*/
+.button-company,
+.button-popup {
+    margin-top: 20px;
 
-.button {
-    font: inherit;
-    text-align: center;
-    background-color: var(--basic-red);
-    color: var(--basic-wight);
-    border: none;
-    vertical-align: middle;
 }
 
-.button:active{
-    background-color: var(--special-red);
+.contacts img {
+    margin-top: 32px;
+
 }
 
 /* footer*/
+
+
 .main-footer {
     background-color: var(--basic-grey);
     background-image: url("../img/footer.png");
     background-position: center, 0 0;
     background-repeat: no-repeat, repeat;
     text-align: center;
-}
+    display: flex;
+    flex-wrap: wrap;   
 
-.logo-footer {
-    background-color: var(--basic-red);
-    width: 220px;
-    height: 68px;
-    box-shadow: inset 0px -5px 0px var(--basic-shadow); 
+    outline: 5px solid green;
+    outline-offset: -5px;
+    
 }
 
 .contacts-footer {
     font-size: 18px;
     line-height: 24px;
     color: var(--special-wight);
+    width: 325px;
+    margin-right: 69px;
+    
+    outline: 5px solid blue;
+    outline-offset: -5px;
+    margin-bottom:  54px;
 }
+
+/*Не могу понять как нормально сделать логотип, чтоб он не выходил за границы блока, и сама картинка логотипа центрировалась в форме*/
+
+.logo-footer {
+    background-color: var(--basic-red);
+    width: 220px;
+    height: 68px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    padding-left: 41px;
+    padding-right: 41px;
+    box-shadow: inset 0px -5px 0px var(--basic-shadow); 
+}
+
+.contacts-footer p {
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--special-wight);
+    padding: 0px;
+    margin: 0px;
+    padding-top: 48px;
+}
+
 
 .contacts-footer a {
     color: var(--special-wight)
+
+}
+
+.wrapper-footer {
+    flex-grow: 1;
+    padding-top: 30px;
 }
 
 .navigation-footer {
     list-style: none;
     font-size: 18px;
     line-height: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+    
+    outline: 5px solid red;
+    outline-offset: 5px;
 }
 
 .navigation-footer a {
@@ -400,7 +646,13 @@ html {
 .navigation-servic-footer {
     list-style: none;
     font-size: 18px;
-    line-height: 24px;    
+    line-height: 24px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+
+    outline: 5px solid violet;
+    outline-offset: 5px;
 }
 
 .navigation-servic-footer a {
@@ -427,29 +679,65 @@ html {
     background-image: url("../img/footer_bottom.png");
     background-position: center, 0 0;
     background-repeat: no-repeat, repeat;
+    display: flex;
+    justify-content: space-between;
+
+    outline: 5px solid red;
+    outline-offset: 0px;
 }
 
-.text-footer {
+.text-footer-company {
+    width: 227px;
+    padding-top: 36px;
+    padding-bottom: 34px;
     font-size: 16px;
     line-height: 18px;
 }
 
-.text-footer a {
-    color: var(--special-ylellow);
+.text-footer-mail {
+    width: 137px;
+    padding-top: 36px;
+    padding-bottom: 34px;
+    font-size: 16px;
+    line-height: 18px;
 }
 
-.text-footer a:hover,
-.text-footer a:focus {
+.text-footer-copyright {
+    width: 98px;
+    padding-top: 36px;
+    padding-bottom: 34px;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.text-footer-mail a,
+.text-footer-copyright a {
+    color: var(--special-ylellow);
+
+   
+}
+
+.text-footer-mail a:hover,
+.text-footer-copyright a:focus {
     text-decoration: underline;
 }
 
-.text-footer a:active,
-.text-footer a:active {
+.text-footer-mail a:active,
+.text-footer-copyright a:active {
     color: var(--special-red);
+}
+
+
+.social {
+
+    outline: 5px solid green;
+    
+
 }
 
 .social-button {
 list-style: none;
+
 }
 
 .social-button a {
@@ -459,6 +747,7 @@ list-style: none;
 }
 
 /* form-popup  */
+
 
 .form-popup {
     box-shadow: 0px 4px 20px var(--special-shadow);
@@ -485,4 +774,8 @@ list-style: none;
 
 .bottom-form {
     background-color: var(--basic-greylight);
+}
+
+.form-basket {
+    display: none;
 }
