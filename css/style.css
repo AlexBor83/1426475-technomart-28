@@ -8,7 +8,7 @@
     --basic-background: #F1F5F7;
     --basic-wight: #FFFFFF;
     --basic-black: #000000;
-    --basic-shadow: rgba(0, 0, 0, 0.24);
+    --basic-shadow: #B52933;
     --special-ylellow: #FFBF47;
     --special-blue: #3BBCE3;
     --special-lilac: #DC91D8;
@@ -62,48 +62,75 @@ html {
     padding: 0;
     clip: rect(0 0 0 0);
     overflow: hidden;
-  }
+}
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    /*outline: 1px solid violet;*/
+}  
+
 
 /*Верх header*/
 .top-header {
     background-color: var(--special-grey);
     font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 43px;
+    line-height: 24px;  
+}
+
+.top-header .container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%; 
-       
-    outline: 5px solid rgba(0, 255, 0, 0.3);
-  
+    flex-wrap: wrap;
+    align-items: center;  
+
+    
 }
 
 .top-header a{
     color: var(--basic-wight);
     text-align: center;
+    display: block;
+    padding-top: 9px;
+    padding-bottom: 9px;
  }
 
 .logo-header {
+    padding-left: 55px;
+    padding-right: 57px;
     background-color: var(--basic-red);
-    box-shadow: inset 0px -5px 0px var(--basic-shadow);
-    width: 220px;
-    height: 47px;
-
+    box-shadow: 0px 5px 0px var(--basic-shadow);
+    
+        
 }
 
 .logo-header:active {
     background-color: var(--special-red);
-    box-shadow: inset 0px -5px 0px var(--basic-shadow);
+    box-shadow: 0px 5px 0px var(--basic-shadow);
 }
 
-.bookmarks-header:active,
-.basket-header:active {
-    color: var(--header-active);
+.bookmarks-header {
+    margin-left: 353px;   
+    padding-right: 20px;
+    padding-left: 20px;     
+}
+
+.basket-header {
+    margin-right: 30px;    
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .pay-header {
     background-color: var(--basic-green);
+    margin-left: auto;
+    padding: 19px 9px;
+}
+
+
+.bookmarks-header:active,
+.basket-header:active {
+    color: var(--header-active);
 }
 
 .pay-header:focus {
@@ -121,19 +148,15 @@ html {
     background-image: url("../img/header.png");
     background-position: center, 0 0; 
     background-repeat: no-repeat, repeat;
-    text-align: center;
     width: 100%;
-
-    outline: 5px solid red 
+    min-height: 320px;    
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr min-content;
-    row-gap: 69px;
-        
-    margin-bottom: 40px;
-    outline: 5px solid blueviolet;
+    grid-template-columns: min-content 1fr min-content;    
+    margin-bottom: 45px;
+
 }
 
 .quote-header {
@@ -141,18 +164,17 @@ html {
     font-size: 16px; 
     line-height: 23px;
     color: var(--basic-red);
-    outline: 5px solid blue;
-    margin-right: 24px;
-    margin-left: 30px;
     width: 197px;
     min-height: 71px;
     margin: 0px;
+    margin-top: 43px;  
+    margin-left: 30px;
+    margin-right: 93px;    
 }
 
-.contacts-header {
-    outline: 5px solid green;
-    width: 270px;
-    height: 71px;    
+.contacts-header {       
+    margin-top: 46px;
+    text-align: center;               
 }
 
 
@@ -160,21 +182,65 @@ html {
     color: var(--basic-red);
     font-size: 21px;
     line-height: 30px;
+    font-weight: bold;
+    padding-left: 74px;
+    padding-right: 45px;
+    padding-top: 7px;
+    padding-bottom: 8px;
     border: 3px solid var(--basic-wight);
 }
 
 .contacts-header p {
     color: var(--basic-grey);
     font-size: 14px;
-    line-height: 24px; 
+    line-height: 24px;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 3px; 
 }
 
 .registration {    
-    width: 281px;
-    height: 71px;
+    padding: 0;
+    margin: 0px;
+    margin-top: 52px;
+    text-align: end;    
+    width: 281px;  
 
-    outline: 5px solid yellow;
 }
+
+.registration-enter { 
+    padding: 0px;
+    margin: 0px;
+    padding-left: 45px;
+    padding-right: 27px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-right: 5px;
+    position: relative
+}
+
+.registration-enter::before {
+    content: "";
+    background-image: url(../img/input_output_icon.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 20px; 
+    height: 18px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    
+}
+
+
+.registration-user {
+    padding: 0px;
+    margin: 0px;
+    padding: 12px 24px; 
+
+
+}
+
 
 .registration a {
     background-color: var(--basic-wight);
@@ -192,23 +258,34 @@ html {
     color: var(--basic-greylight);
 }
 
-.user {
+.user-wrapper {
     background-color: var(--basic-wight);
     background-repeat: no-repeat;
-    width: 281px;
-    height: 71px;
+    min-width: 299px;
+    margin-top: 46px;
+    display: flex;
+    justify-content: space-between;   
+    
 }
 
 .user-enter,
 .user-exit {
+    display: block;
     color: var(--basic-black) ;
     font-size: 21px;
     line-height: 21px;
+    padding: 0px;
+    margin: 0px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     position: relative;     
 }
 
-/* Сделал пока эконки через псевдо элемент
-нужно еще сделать цвет */
+.user-enter {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 
 .user-enter::before {
     content: "";
@@ -218,11 +295,11 @@ html {
     width: 20px; 
     height: 18px;
     position: absolute;
-    top: 4px;
-    left: -30px;
+    top: 12px;
+    left: 15px;
 }
 
-.user-exit::before {
+.user-exit::after {
     content: "";
     background-image: url(../img/input_output_icon.svg);
     background-repeat: no-repeat;
@@ -230,8 +307,8 @@ html {
     width: 20px; 
     height: 18px;
     position: absolute;
-    top: 4px;
-    left: 10px;
+    top: 12px;
+    left: -40px;
     transform: rotate(180deg);
 }
 
@@ -240,10 +317,22 @@ html {
     color: var(--basic-greylight)
 }
 
+.user-cabinet {
+    text-align: center;
+    margin-top: 7px;
+}
+
+.user-cabinet-order {
+    margin-right: 50px;
+
+
+}
+
 .user-cabinet a {
     color: var(--basic-grey) ;
     font-size: 16px;
     line-height: 18px;
+    
 }
 
 .user-cabinet a:focus,
@@ -255,27 +344,35 @@ html {
     color: var(--basic-greylight);
 }
 
+
 .navigation-header {
     list-style: none;
     margin: 0; 
     padding: 0;
     background-color: var(--basic-grey);
-    box-shadow: inset 0px -5px 0px var(--special-grey);
-    outline: 5px solid indigo;
-    outline-offset: -5px;
+    box-shadow: 0px 5px 0px var(--special-grey);
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    padding-top: 16px;
-    padding-bottom: 20px;
-
+    
+    
+   
 }
+
+.navigation-header li {    
+    flex-grow: 1;   
+}
+
+
 
 .navigation-header a {
     font-size: 18px;
     line-height: 24px;
     color: var(--basic-wight);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: block;
+    text-align: center; 
+
 }
 
 .navigation-header a:focus,
@@ -288,14 +385,7 @@ html {
     opacity: 0.5;
 }
 
-.container {
-    width: 940px;
-    margin: 0 auto;
-    padding: 0 10px;
 
-    outline: 5px solid violet;
-    outline-offset: 5px;
-  }
 
   
 .name-page {
@@ -320,15 +410,13 @@ html {
     display: grid;
     grid-template-columns: 220px 1fr;
     align-content: start;   
-   
-    outline: 5px solid rgba(255, 0, 0, 0.7);
+       
   
-  }
+}
 
 .filter {
 
-    outline-offset: -5px;
-    outline: 5px solid green;
+    
 }
 
 
@@ -357,19 +445,37 @@ html {
     vertical-align: middle;
     text-transform: uppercase;
     display: inline-block;
-
+    padding: 11px 40px;
 }
 
 .button:active{
     background-color: var(--special-red);
 }
 
-/*
-.products-services {
+.filter-button {
+    background-color: var(--basic-wight);
+    border: 1px solid var(--special-greylight);
+    color: var(--basic-black);
+    padding: 10px 78px;      
 
 }
 
+
+
+.products-services {
+    display: none;
+}
+
+
 .slider {
+    display: none;
+
+
+}
+
+.popular-tools {
+    
+
 
 }
 
@@ -379,12 +485,8 @@ html {
     
 }
 
-
-Карточка товара. 
-Разметку каталога сделал на гридах, внутри карточки сделаю в следующем задании
-Как сделатьчтобы при наведении карточка менялась и на другю и добавлялись кнопки - "купить" и "в закладки" и красная плашка в углу карточки с надписью NEW п. 3.17 и 3.18 Тех задания
-как сделать кнопка купить стрелочкой как в макете  */
-
+/*
+Карточка товара.*/ 
 
 .filter-result {
     display: grid;
@@ -395,17 +497,13 @@ html {
     min-content;
     align-content: start;
     padding: 0px;
-    margin: 0px;
-
-    outline-offset: -5px;
-    outline: 5px solid blue; 
+    margin: 0px;   
 }
 
 .sorting {
     grid-column: 1 / -1;
-    outline-offset: -5px;
-      
-    outline: 5px solid rgba(0, 255, 0, 0.7);
+    
+     
 
 }
 
@@ -423,23 +521,46 @@ html {
     margin: 0px;
     margin-left: 20px;
     
-    outline-offset: -5px;
-    outline: 5px solid red;
+    
+    
 }
 
 .catalog-card {
     width: 220px;
     min-height: 318px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--special-greylight);    
 
-    outline-offset: -5px;
-    outline: 5px solid red;
 }
+
+.catalog-card img {
+    margin: 22px auto;  
+
+    
+}
+
+.catalog-card-title {
+    padding: 0px;
+    margin: 0px;
+}
+
+
 
 .catalog-card-title a {
     font-style: bold;
+    display: block;
     font-size: 18px; 
     line-height: 20px;
     color: var(--basic-black);
+    width: 170px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    padding: 0 20px;
+    
 }
 
 .catalog-card-price {
@@ -452,6 +573,9 @@ html {
     text-align: center;
 }
 
+/*Картинки разнх размеров как сделать чтоб от нее отступ был автоматический, чтоб текст и кнопки был на одном уровне
+как понял кнопки купить и в корзину будут всплывать как попапы с позционированием относительно карточки, ток не понял в макете указано про тень, нов фигме ее не мог найти */
+
 .catalog-card-discount {
     font-style: bold;
     font-size: 17px; 
@@ -459,13 +583,28 @@ html {
     color: var(--basic-wight);
     background-color: var(--basic-red);
     text-transform: uppercase;
-    text-align: center;  
+    display: block;
+    text-align: center;
+    padding: 0px;
+    margin: 0 auto;
+    margin-left: 45px;
+    margin-top: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 32px;
+    padding-right: 44px;    
+    
+}
+
+.catalog-card-popup {
+    display: none;
+
+
 }
 
 .page {
     grid-column: 1 / -1;
-    outline-offset: -5px;
-    outline: 5px solid rgba(0, 255, 0, 0.7);
+    
     margin-bottom: 59px;
 }
 
@@ -495,23 +634,24 @@ html {
 
 }
 
-/*
+
 
 .popular-manufacturers {
+    display: none;
 
 }
 
 .services {
+    display: none;
 
 }
-*/
+
 .columns-company {
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
 
-    outline: 5px solid rgba(255, 0, 0, 0.7);
-    outline-offset: 5px;
+    
 }
 
 .contacts .big-maps {
@@ -520,13 +660,13 @@ html {
 
 .company {
     width: 460px;   
-    outline: 5px solid green;
+    
 }
 
 .contacts {
     width: 300px;
 
-    outline: 5px solid blue;
+    
 }
 
 .company h2,
@@ -539,13 +679,21 @@ html {
     margin-top: 70px;
 }
 
-.company p,
-.contacts p{
+/*Тут могу поставить br, чтоб доп классы не делать*/
+.company p {
     font-family: PT Sans;
     font-size: 13px;
     line-height: 24px;
     width: 478px;    
 }
+
+.contacts p{
+    font-family: PT Sans;
+    font-size: 13px;
+    line-height: 24px;
+    width: 180px;    
+}
+
 
 .texnomart-delivery {
     font-size: 18px;
@@ -557,6 +705,13 @@ html {
 .button-company,
 .button-popup {
     margin-top: 20px;
+
+}
+
+.button-popup {
+    padding-left: 61px;
+    padding-right: 62px;
+
 
 }
 
@@ -573,38 +728,32 @@ html {
     background-image: url("../img/footer.png");
     background-position: center, 0 0;
     background-repeat: no-repeat, repeat;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;   
-
-    outline: 5px solid green;
-    outline-offset: -5px;
-    
+       
 }
+
+.wrap-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
 
 .contacts-footer {
     font-size: 18px;
     line-height: 24px;
     color: var(--special-wight);
-    width: 325px;
-    margin-right: 69px;
-    
-    outline: 5px solid blue;
-    outline-offset: -5px;
     margin-bottom:  54px;
+    
 }
-
-/*Не могу понять как нормально сделать логотип, чтоб он не выходил за границы блока, и сама картинка логотипа центрировалась в форме*/
 
 .logo-footer {
     background-color: var(--basic-red);
+    display: block;
     width: 220px;
-    height: 68px;
     padding-top: 20px;
-    padding-bottom: 25px;
-    padding-left: 41px;
-    padding-right: 41px;
-    box-shadow: inset 0px -5px 0px var(--basic-shadow); 
+    padding-bottom: 20px;
+    box-shadow: 0px 5px 0px var(--basic-shadow);
+    text-align: center; 
 }
 
 .contacts-footer p {
@@ -619,12 +768,12 @@ html {
 
 .contacts-footer a {
     color: var(--special-wight)
-
 }
 
 .wrapper-footer {
     flex-grow: 1;
     padding-top: 30px;
+    
 }
 
 .navigation-footer {
@@ -633,30 +782,50 @@ html {
     line-height: 24px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;    
+    padding: 0; 
+      
+   
     
-    outline: 5px solid red;
-    outline-offset: 5px;
+}
+
+.navigation-footer li {
+    flex-grow: 1;    
 }
 
 .navigation-footer a {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     color: var(--basic-background);
+    text-align: end;    
 }
+
 
 .navigation-servic-footer {
     list-style: none;
     font-size: 18px;
     line-height: 24px;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0; 
+   
+}
 
-    outline: 5px solid violet;
-    outline-offset: 5px;
+.navigation-servic-footer li {
+    flex-grow: 1;
 }
 
 .navigation-servic-footer a {
     color: var(--special-yellowlight);
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    text-align: end;
+    
 }
 
 .navigation-footer a:focus,
@@ -673,17 +842,18 @@ html {
 }
 
 .bottom-footer {
-    text-align: center;
+   
     color: var(--basic-wight);
     background-color: var(--special-greydark);
     background-image: url("../img/footer_bottom.png");
     background-position: center, 0 0;
     background-repeat: no-repeat, repeat;
-    display: flex;
-    justify-content: space-between;
+        
+}
 
-    outline: 5px solid red;
-    outline-offset: 0px;
+.wrap-bottom-footer {
+    display: flex;
+    
 }
 
 .text-footer-company {
@@ -692,22 +862,28 @@ html {
     padding-bottom: 34px;
     font-size: 16px;
     line-height: 18px;
+    margin-right: auto;
 }
 
 .text-footer-mail {
     width: 137px;
-    padding-top: 36px;
-    padding-bottom: 34px;
     font-size: 16px;
     line-height: 18px;
+    padding: 0px;
+    padding-top: 36px;
+    padding-bottom: 34px;
+    margin-right: 51px;
+    margin-left: 118px;
 }
 
 .text-footer-copyright {
     width: 98px;
-    padding-top: 36px;
-    padding-bottom: 34px;
     font-size: 16px;
     line-height: 18px;
+    padding: 0px;
+    padding-top: 36px;
+    padding-bottom: 34px;
+    margin-right: 13px;
 }
 
 .text-footer-mail a,
@@ -730,7 +906,7 @@ html {
 
 .social {
 
-    outline: 5px solid green;
+    
     
 
 }
