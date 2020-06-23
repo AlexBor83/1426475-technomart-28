@@ -3,13 +3,18 @@
 :root {
     --basic-red: #EE3643;
     --basic-green: #63A63E;
+    --basic-greenlight: #5FBB2D;
+    --basic-greendark: #518534;
+    --basic-shadowgreen: #367315;    
     --basic-grey: #32425C;
     --basic-greylight: #C5C5C5;
+    --basic-greydark: #F9F5F0;
     --basic-background: #F1F5F7;
     --basic-wight: #FFFFFF;
     --basic-black: #000000;
     --basic-shadow: #B52933;
     --special-ylellow: #FFBF47;
+    --special-orange: #FFC047;
     --special-blue: #3BBCE3;
     --special-lilac: #DC91D8;
     --special-greenlight: #8ED78F;
@@ -20,6 +25,7 @@
     --special-greydark:#1D2739;
     --special-greylight: #EAEAEA;
     --special-wight: #F3F7F9;
+    
     --special-shadow: rgba(0, 0, 0, 0.15);
     --header-active: rgba(255, 255, 255, 0.5);    
 }
@@ -238,7 +244,6 @@ html {
     margin: 0px;
     padding: 12px 24px; 
 
-
 }
 
 
@@ -385,9 +390,83 @@ html {
     opacity: 0.5;
 }
 
+/*main*/
 
+/*ГРИД со слайдером*/
 
+.products-services {
+    
+}
+
+.products-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.products-services-item p {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.products-services-item a {
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--basic-wight);
+    opacity: 0.3;
+}
+
+.backdrop-orange {
+    background-color: var(--special-ylellow);
+
+}
+
+.backdrop-blue {
+    background-color: var(--special-blue);
+
+}
+
+.backdrop-violet {
+    background-color: var(--special-lilac);
+
+}
+
+.backdrop-green {
+    background-color: var(--special-greenlight);
+}
+
+.backdrop-yellow {
+    background-color: var(--special-orange);
+
+}
+
+.slider {
   
+
+}
+
+
+
+
+/*breadcrumbs*/
+
+.breadcrumbs-list {
+    list-style: none;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--basic-black);
+    
+}
+
+.breadcrumbs-item {
+    color: var(--basic-black);
+}
+
+
 .name-page {
     background-color: var(--basic-background);
     background-image: url("../img/header.png");
@@ -460,30 +539,42 @@ html {
 
 }
 
-
-
-.products-services {
-    display: none;
-}
-
-
-.slider {
-    display: none;
-
-
-}
-
-.popular-tools {
+.title-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--basic-greydark);
+    justify-content: space-between;
     
-
-
 }
 
-.popular-tools h2{
-    font-size: 30px; 
+.popular-tools h2,
+.popular-manufacturers h2 {
+    font-size: 30px;
     line-height: 30px;
+    text-transform: uppercase;
+    color: var(--basic-grey);
+    padding: 0;
+    margin: 0;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-left: 28px;
     
 }
+
+.button-popular-tools {
+    margin: 0;
+    padding: 0;
+    padding: 10px 24px;
+    margin-right: 14px;
+}
+
+.button-popular-manufacturers {
+    margin: 0;
+    padding: 0;
+    padding: 10px 39px;
+    margin-right: 19px;
+}
+
 
 /*
 Карточка товара.*/ 
@@ -502,10 +593,44 @@ html {
 
 .sorting {
     grid-column: 1 / -1;
-    
-     
-
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--basic-black);
+        
 }
+
+.sorting-list {
+    list-style: none;
+    
+}
+
+.sorting-item a,
+.sorting-up,
+.sorting-down {
+    color: var(--basic-black);
+    opacity: 0.3
+}
+
+.sorting-item a:hover,
+.sorting-up:hover,
+.sorting-down:hover,
+.sorting-item a:focus,
+.sorting-up:focus,
+.sorting-down:focus {
+    color: var(--basic-black);
+    opacity: 1      
+    
+}
+
+.sorting-item a:active,
+.sorting-up:active,
+.sorting-down:active {
+    color: var(--basic-red);
+    opacity: 1      
+    
+}
+
 
 .catalog-list {
     display: grid;
@@ -519,12 +644,14 @@ html {
     grid-gap: 20px;
     padding: 0px;
     margin: 0px;
-    margin-left: 20px;
-    
-    
-    
+    margin-left: 20px;   
+  
 }
+/*Сделать грид на листе index 4 колонки
+.catalog-list-index {
 
+}
+*/
 .catalog-card {
     width: 220px;
     min-height: 318px;
@@ -598,14 +725,81 @@ html {
 
 .catalog-card-popup {
     display: none;
-
-
+   
 }
 
-.page {
+.buy-button {
+    font-size: 14px;
+    line-height: 18px;
+    font: inherit;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    display: inline-block;
+    color: var(--basic-wight);
+    background-color: var(--basic-green);
+}
+
+.bookmark-button {
+    font-size: 14px;
+    line-height: 18px;    
+    font: inherit;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    display: inline-block;
+    color: var(--basic-grey);
+    background-color: var(--basic-wight);
+    border: 3px solid var(--basic-green);
+    border-radius: 2px;
+}
+
+
+.buy-button:hover,
+.buy-button:focus {
+    background-color: var(--basic-greenlight);
+    box-shadow: 0px 3px 0px var(--basic-shadowgreen);
+    border-radius: 2px;
+}
+
+
+.bookmark-button:hover,
+.bookmark-button:focus {
+    border-color: var(--basic-grey);   
+   
+}
+
+.buy-button:active {
+    background-color: var(--basic-greendark);
+    box-shadow: 0px 3px 0px var(--basic-shadowgreen);
+    border-radius: 2px;
+}
+
+.bookmark-button:active {
+   opacity: 0.3;   
+   
+}
+
+.page-list {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--basic-black);
+    text-align: center;
+    list-style: none;
     grid-column: 1 / -1;
-    
     margin-bottom: 59px;
+}
+
+.page-item a {
+    color: var(--basic-black);
+    border: 1px solid var(--special-greylight);
+    border-radius: 2px; 
+}
+
+.page-item a:active {
+    color: var(--basic-black);
+    border: 1px solid var(--basic-red);
+    border-radius: 2px; 
 }
 
 .buy-button {
@@ -634,28 +828,148 @@ html {
 
 }
 
+/*Сделать грид на листе index 4 колонки*/
 
 
-.popular-manufacturers {
-    display: none;
+.popular-manufacturers-list {
+    list-style: none;
+    padding-bottom: 70px;   
 
 }
+
+.popular-manufacturers-item {
+    border: 1px solid var(--special-greylight);
+    width: 220px;
+    height: 145px;
+
+}
+
+/*Блок с сервисом, гарантией и кредитом*/
 
 .services {
-    display: none;
+    background-color: var(--basic-background);
+    background-image: url("../img/header.png");
+    background-position: center, 0 0; 
+    background-repeat: no-repeat, repeat;
+    width: 100%;
+    padding: 0;
+    padding-top: 64px;
+    padding-bottom: 99px;
+
+   
+}
+
+.services-heading {
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 25px;
 
 }
 
+.services-slogan {
+    font-size: 13px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 70px;
+    width: 370px;
+
+}
+
+.services-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 25px;  
+
+}
+
+/*Классы сделал чтоб можно было их выбирать для переключения карточки Сервис, Гарантия и Кредит*/
+.services-item-delivery,
+.services-item-guarantee,
+.services-item-credit {
+    font-size: 21px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+        
+}
+
+/*Вопрос с тенью не понимаю почему нет*/
+
+.services-item-delivery button,
+.services-item-guarantee button,
+.services-item-credit button {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    padding-top: 13px;
+    padding-left: 20px;
+    padding-bottom: 18px;
+    width: 240px;
+    text-align: start;
+    vertical-align: middle;
+    display: inline-block;   
+    background-color: var(--basic-grey);
+    color: var(--basic-wight);
+    border: none;
+    box-shadow: 0px 1px 0px var(--special-grey), inset 0px 1px 0px #405069 var(--basic-grey);
+
+}
+
+.services-item-delivery button:focus,
+.services-item-guarantee button:focus,
+.services-item-credit button:focus,
+.services-item-delivery button:hover,
+.services-item-guarantee button:hover,
+.services-item-credit button:hover {
+    background-color: var(--special-grey);
+
+}
+
+.services-item-delivery button:active,
+.services-item-guarantee button:active,
+.services-item-credit button:active {
+    background-color: var(--basic-wight);
+    color: var(--basic-grey);
+}
+
+.service-delivery h3,
+.service-guarantee h3,
+.service-credit h3 {
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+
+}
+
+.service-delivery p,
+.service-guarantee p,
+.service-credit p {
+    font-size: 13px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+/*Блок о компании с картой*/
 .columns-company {
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
-
     
 }
 
 .contacts .big-maps {
-    display: none;
+    
 }
 
 .company {
@@ -679,7 +993,7 @@ html {
     margin-top: 70px;
 }
 
-/*Тут могу поставить br, чтоб доп классы не делать*/
+/*Тут могу поставить br, чтоб доп классы не делать из за разной ширины текста*/
 .company p {
     font-family: PT Sans;
     font-size: 13px;
@@ -719,6 +1033,37 @@ html {
     margin-top: 32px;
 
 }
+
+.hammer-drill-text {
+    background-color: var(--basic-background);
+    background-image: url("../img/header.png");
+    background-position: center, 0 0; 
+    background-repeat: no-repeat, repeat;
+    padding-top: 64px;
+    padding-bottom: 68px;    
+}
+
+.hammer-drill-subject {
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+        
+}
+
+/*Тут нужен Br*/
+
+.hammer-drill-slogan {
+    font-family: "PT Sans";
+    font-size: 13px;
+    line-height: 24px;
+    width: 907px;
+    
+
+
+}
+
 
 /* footer*/
 
@@ -927,7 +1272,7 @@ list-style: none;
 
 .form-popup {
     box-shadow: 0px 4px 20px var(--special-shadow);
-    display: none;
+    
 }
 
 .name-popup label,
