@@ -605,27 +605,19 @@ html {
     
 }
 
-.sorting-item a,
-.sorting-up,
-.sorting-down {
+.sorting-item a {
     color: var(--basic-black);
     opacity: 0.3
 }
 
 .sorting-item a:hover,
-.sorting-up:hover,
-.sorting-down:hover,
-.sorting-item a:focus,
-.sorting-up:focus,
-.sorting-down:focus {
+.sorting-item a:focus {
     color: var(--basic-black);
     opacity: 1      
     
 }
 
-.sorting-item a:active,
-.sorting-up:active,
-.sorting-down:active {
+.sorting-item a:active {
     color: var(--basic-red);
     opacity: 1      
     
@@ -870,12 +862,13 @@ html {
 }
 
 .services-slogan {
+    font-family: "PT Sans", "Cuprum", sans-serif ;
     font-size: 13px;
     line-height: 24px;
     margin: 0;
     padding: 0;
     padding-bottom: 70px;
-    width: 370px;
+    width: 400px;
 
 }
 
@@ -887,10 +880,7 @@ html {
 
 }
 
-/*Классы сделал чтоб можно было их выбирать для переключения карточки Сервис, Гарантия и Кредит*/
-.services-item-delivery,
-.services-item-guarantee,
-.services-item-credit {
+.services-item {
     font-size: 21px;
     line-height: 30px;
     margin: 0;
@@ -898,11 +888,10 @@ html {
         
 }
 
-/*Вопрос с тенью не понимаю почему нет*/
+/*Вопрос с тенью не понимаю почему нет
+Тень указана в фигме*/
 
-.services-item-delivery button,
-.services-item-guarantee button,
-.services-item-credit button {
+.services-item button {
     font: inherit;
     margin: 0;
     padding: 0;
@@ -916,23 +905,19 @@ html {
     background-color: var(--basic-grey);
     color: var(--basic-wight);
     border: none;
-    box-shadow: 0px 1px 0px var(--special-grey), inset 0px 1px 0px #405069 var(--basic-grey);
+    border-top: 1px solid var(--basic-black);
+    border-bottom: 1px solid var(--basic-black);
+    
 
 }
 
-.services-item-delivery button:focus,
-.services-item-guarantee button:focus,
-.services-item-credit button:focus,
-.services-item-delivery button:hover,
-.services-item-guarantee button:hover,
-.services-item-credit button:hover {
+.services-item button:focus,
+.services-item button:hover {
     background-color: var(--special-grey);
 
 }
 
-.services-item-delivery button:active,
-.services-item-guarantee button:active,
-.services-item-credit button:active {
+.services-item button:active {
     background-color: var(--basic-wight);
     color: var(--basic-grey);
 }
@@ -952,6 +937,7 @@ html {
 .service-delivery p,
 .service-guarantee p,
 .service-credit p {
+    font-family: "PT Sans", "Cuprum", sans-serif ;
     font-size: 13px;
     line-height: 24px;
     margin: 0;
@@ -965,10 +951,6 @@ html {
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
-    
-}
-
-.contacts .big-maps {
     
 }
 
@@ -993,12 +975,21 @@ html {
     margin-top: 70px;
 }
 
-/*Тут могу поставить br, чтоб доп классы не делать из за разной ширины текста*/
 .company p {
-    font-family: PT Sans;
+    font-family: "PT Sans", "Cuprum", sans-serif;
     font-size: 13px;
     line-height: 24px;
-    width: 478px;    
+        
+}
+
+.company-text-shop {
+    width: 478px;
+
+}
+
+.company-text-delivery {
+    width: 400px;
+
 }
 
 .contacts p{
@@ -1013,9 +1004,13 @@ html {
     font-size: 18px;
     line-height: 24px;
     list-style: none;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
+.texnomart-delivery li {
+    margin-bottom: 12px;
+
+}
 .button-company,
 .button-popup {
     margin-top: 20px;
@@ -1052,18 +1047,15 @@ html {
         
 }
 
-/*Тут нужен Br*/
-
 .hammer-drill-slogan {
-    font-family: "PT Sans";
+    font-family: "PT Sans", "Cuprum", sans-serif;
     font-size: 13px;
     line-height: 24px;
     width: 907px;
-    
-
+    padding: 0;
+    margin: 0;     
 
 }
-
 
 /* footer*/
 
