@@ -77,6 +77,7 @@
       <h1 class="visually-hidden">Техномарт</h1>
       <section class="products-services">
         <h2 class="visually-hidden">Товары и услуги</h2>
+
         <ul class="products-services-list">
           <li class="products-services-item backdrop-orange">
             <p>Материалы</p>
@@ -102,28 +103,30 @@
             <a href="blank.html">бесплатно</a>
             <img src="img/delivery_icon.svg" width="59" height="72" alt="тележка с товаром">
           </li>
+          <!--Слайдер -->
+          <li class="products-services-item slider-item">
+            <div class="slider">
+              <div class="slider-hammer-drill">
+                <div class="slider-hammer-drill-text">
+                  <h3>Перфораторы</h3>
+                  <p>Настоящие мужские игрушки</p>
+                </div>
+                <a href="catalog.html">открыть каталог</a>
+              </div>
+              <div class="slider-drill">
+                <div class="drill-text">
+                  <h3>Дрели</h3>
+                  <p>Соседям на радость</p>
+                </div>
+                <a class="button" href="catalog.html">открыть каталог</a>
+              </div>
+              <button type="button" class="button-next-slider">вперед</button>
+              <button type="button" class="button-back-slider">назад</button>
+            </div>
+          </li>
         </ul>
-      </section>
 
-      <!--Слайдер -->
-      <div class="slider">
-        <div class="hammer-drill">
-          <div class="hammer-drill text">
-            <h3>Перфораторы</h3>
-            <p>Настоящие мужские игрушки</p>
-          </div>
-          <a href="catalog.html">открыть каталог</a>
-        </div>
-        <div class="slider-drill">
-          <div class="drill text">
-            <h3>Дрели</h3>
-            <p>Соседям на радость</p>
-          </div>
-          <a class="button" href="catalog.html">открыть каталог</a>
-        </div>
-        <button type="button" class="button-next-slider">вперед</button>
-        <button type="button" class="button-back-slider">назад</button>
-      </div>
+      </section>
 
       <section class="popular-tools">
         <div class="title-container">
@@ -133,7 +136,9 @@
         <ul class="catalog-list catalog-list-index">
           <li class="catalog-item">
             <section class="catalog-card">
-              <img src="img/bosh_bfg_9000.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 9000">
+              <div class="img-wrap">
+                <img src="img/bosh_bfg_9000.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 9000">
+              </div>
               <h3 class="catalog-card-title">
                 <a href="blank.html">Перфоратор BOSCH BFG 9000</a>
               </h3>
@@ -147,7 +152,9 @@
           </li>
           <li>
             <section class="catalog-card">
-              <img src="img/bosh_bfg_3000.jpg" width="127" height="112" alt="Перфоратор BOSCH BFG 3000">
+              <div class="img-wrap">
+                <img src="img/bosh_bfg_3000.jpg" width="127" height="112" alt="Перфоратор BOSCH BFG 3000">
+              </div>
               <h3 class="catalog-card-title">
                 <a href="blank.html">Перфоратор BOSCH BFG 3000</a>
               </h3>
@@ -161,7 +168,9 @@
           </li>
           <li>
             <section class="catalog-card">
-              <img src="img/bosh_bfg_6000.jpg" width="144" height="128" alt="Перфоратор BOSCH BFG 6000">
+              <div class="img-wrap">
+                <img src="img/bosh_bfg_6000.jpg" width="144" height="128" alt="Перфоратор BOSCH BFG 6000">
+              </div>
               <h3 class="catalog-card-title">
                 <a href="blank.html">Перфоратор BOSCH BFG 6000</a>
               </h3>
@@ -176,10 +185,14 @@
 
           <li>
             <section class="catalog-card">
-              <img src="img/bosh_bfg_2000.jpg" width="144" height="128" alt="Перфоратор BOSCH BFG 2000">
+              <div class="img-wrap">
+                <img src="img/bosh_bfg_2000.jpg" width="144" height="128" alt="Перфоратор BOSCH BFG 2000">
+              </div>
               <h3 class="catalog-card-title">
                 <a href="blank.html">Перфоратор BOSCH BFG 2000</a>
               </h3>
+              <!--Как сделать чтоб карточка без del,была одинаковая кнопка на одном уровне-->
+              <del class="catalog-card-price visually-hidden">12500 Р.</del>
               <a class="catalog-card-discount" href="blank.html">12500 Р.</a>
               <div class="catalog-card-popup">
                 <button class="buy-button" type="button">Купить</button>
@@ -229,31 +242,32 @@
         <h2 class="services-heading">Сервисы</h2>
         <p class="services-slogan">Хороший интернет-магазин отличается от плохого не только ценами!
           Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
-        
-          <ul class="services-list">
-          <li class="services-item services-item-delivery"><button type="button">Доставка</button></li>
-          <li class="services-item services-item-guarantee"><button type="button">Гарантия</button></li>
-          <li class="services-item services-item-credit"><button type="button">Кредит</button></li>
-        </ul>
-
         <div class="services-container">
-          <div class="service-delivery">
-            <h3>доставка</h3>
-            <p>Мы с удовольствием доставим ваш товар прямо
-              к вашему подъезду совершенно бесплатно!
-              Ведь мы неплохо заработаем,
-              поднимая его на ваш этаж!</p>
+          <ul class="services-list">
+            <li class="services-item services-item-delivery"><button type="button">Доставка</button></li>
+            <li class="services-item services-item-guarantee"><button type="button">Гарантия</button></li>
+            <li class="services-item services-item-credit"><button type="button">Кредит</button></li>
+          </ul>
+          <div class="service-submenu service-delivery">
+            <div class="service-submenu-text">
+              <h3>доставка</h3>
+              <p>Мы с удовольствием доставим ваш товар прямо
+                к вашему подъезду совершенно бесплатно!
+                Ведь мы неплохо заработаем,
+                поднимая его на ваш этаж!</p>
+            </div>
             <img src="img/delivery.svg" width="468" height="261" alt="">
           </div>
-          <div class="service-guarantee">
+          <div class="service-submenu service-guarantee">
             <h3>гарантия</h3>
             <p>Если купленный у нас товар поломается или заискрит, а также в случае пожара,
               спровоцированного его
-              возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом уж
+              возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом
+              уж
               восстановите как-нибудь сами.</p>
             <img src="img/guarantee.svg" width="468" height="261" alt="">
           </div>
-          <div class="service-credit">
+          <div class="service-submenu service-credit">
             <h3>кредит</h3>
             <p>Залезть в долговую яму стало проще! Кредитные консультанты придут вам на
               помощь.</p>
@@ -293,7 +307,7 @@
               заехав в наш офис:
             </p>
             <img src="img/maps.png" width="300" height="158" alt="Адрес офиса">
-                        <a class="button button-popup" href="blank.html">Заблудились? Напишите нам!</a>
+            <a class="button button-popup" href="blank.html">Заблудились? Напишите нам!</a>
           </section>
         </div>
       </div>
@@ -434,11 +448,11 @@
     </form>
     <button class="close" type="button">закрыть</button>
   </section>
-<!-- Здесь будет карта -->
-<div class="big-maps">
-  <img src="img/map_all.png" width="940" height="449" alt="Общая карта c адресом офиса">
-  <button class="close" type="button">закрыть</button>
-</div>
+  <!-- Здесь будет карта -->
+  <div class="big-maps">
+    <img src="img/map_all.png" width="940" height="449" alt="Общая карта c адресом офиса">
+    <button class="close" type="button">закрыть</button>
+  </div>
 
 
 </body>
