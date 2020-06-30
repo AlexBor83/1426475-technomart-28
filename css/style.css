@@ -75,10 +75,13 @@ html {
 }  
 
 /*Верх header*/
+
 .top-header {
+    margin-bottom: -1px;
     background-color: var(--special-grey);
     font-size: 18px;
     line-height: 24px;
+    padding-bottom: -3px;
 }
 
 .top-header .container {
@@ -92,8 +95,8 @@ html {
     color: var(--basic-wight);
     text-align: center;
     display: block;
-    padding-top: 9px;
-    padding-bottom: 9px;
+    padding-top: 7px;
+    padding-bottom: 7px;
  }
 
 .logo-header {
@@ -101,6 +104,11 @@ html {
     padding-right: 57px;
     background-color: var(--basic-red);
     box-shadow: 0px 5px 0px var(--basic-shadow);          
+}
+
+.top-header .logo-header {
+    padding-top: 11px;
+    padding-bottom: 6px;
 }
 
 .logo-header:active {
@@ -112,17 +120,16 @@ html {
     width: 271px;
     padding: 0px;
     margin: 0px;
-    padding-top: 9px;
-    padding-bottom: 9px;
     position: relative;    
 }
+
 /**Как изменить цвет в placeholder="Поиск:"*/
 
 .search-input {
     box-sizing: border-box;
     display: block;
-    padding-top: 9px;
-    padding-bottom: 9px;   
+    padding-top: 7px;
+    padding-bottom: 9px;
     width: 100%;
     background-color: var(--special-grey);
     padding-left: 42px;
@@ -135,11 +142,10 @@ html {
     background-color: var(--basic-wight);      
 }
 
-
 .search-input + svg {
     position: absolute;
-    left: 10px;
-    top: 22px;
+    left: 16px;
+    top: 11px;
     fill: var(--basic-wight);    
 }
 
@@ -148,20 +154,21 @@ html {
 } 
 
 .bookmarks-header {
-    margin-left: 0px;   
-    padding-right: 20px;
-    padding-left: 20px;     
-}
-
-.basket-header {      
+    margin-left: 23px;
     padding-right: 20px;
     padding-left: 20px;
+}
+
+.basket-header {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: 32px;
 }
 
 .pay-header {
     background-color: var(--basic-green);
     margin-left: auto;
-    padding: 19px 9px;
+    padding: 19px 17px;
 }
 
 .bookmarks-header:active,
@@ -178,38 +185,40 @@ html {
     color:var(--header-active);
 }
 
-/*Основной header*/
-.main-header { 
+/**Основной header*/
+
+.main-header {
     background-color: var(--basic-background);
     background-image: url("../img/header.png");
-    background-position: center, 0 0; 
+    background-position: center, 0 0;
     background-repeat: no-repeat, repeat;
     width: 100%;
-    min-height: 320px;    
+    padding-bottom: 63px;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: min-content 1fr min-content;    
-    margin-bottom: 45px;
+    grid-template-columns: min-content 1fr min-content;
+    margin-bottom: 41px;
 }
 
 .quote-header {
     font-style: Italic;
-    font-size: 16px; 
+    font-size: 16px;
     line-height: 23px;
     color: var(--basic-red);
     width: 197px;
     min-height: 71px;
     margin: 0px;
-    margin-top: 43px;  
+    margin-top: 44px;
     margin-left: 30px;
-    margin-right: 93px;    
+    margin-right: 93px;
 }
 
-.contacts-header {       
-    margin-top: 46px;
-    text-align: center;               
+.contacts-header {
+    margin-top: 48px;
+    text-align: center;
+    width: 270px;
 }
 
 .contacts-header a {
@@ -217,10 +226,10 @@ html {
     font-size: 21px;
     line-height: 30px;
     font-weight: bold;
-    padding-left: 74px;
-    padding-right: 45px;
-    padding-top: 7px;
-    padding-bottom: 8px;
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    padding-left: 27px;
     border: 3px solid var(--basic-wight);
 }
 
@@ -233,23 +242,23 @@ html {
     margin-top: 3px; 
 }
 
-.registration {    
+.registration {
     padding: 0;
     margin: 0px;
-    margin-top: 52px;
-    text-align: end;    
-    width: 281px;  
+    margin-top: 58px;
+    text-align: end;
+    width: 281px;
 }
 
-.registration-enter { 
+.registration-enter {
     padding: 0px;
     margin: 0px;
-    padding-left: 45px;
-    padding-right: 27px;
+    padding-left: 46px;
+    padding-right: 28px;
     padding-top: 12px;
     padding-bottom: 12px;
     margin-right: 5px;
-    position: relative
+    position: relative;
 }
 
 .registration-enter::before {
@@ -377,16 +386,16 @@ html {
     flex-wrap: wrap;   
 }
 
-.navigation-header li {    
-    flex-grow: 1;   
+.navigation-header li {
+    flex-grow: 1;
 }
 
 .navigation-header a {
     font-size: 18px;
     line-height: 24px;
     color: var(--basic-wight);
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 17px;
+    padding-bottom: 15px;
     display: block;
     text-align: center;
 }
@@ -401,7 +410,7 @@ html {
     opacity: 0.5;
 }
 
-/*main*/
+/**main*/
 /*ГРИД со слайдером*/
 
 .products-services {
@@ -470,7 +479,7 @@ html {
     margin: 0;
 }
 
-/*breadcrumbs*/
+/**breadcrumbs*/
 
 .breadcrumbs-list {
     font-family: "PT Sans", Arial, sans-serif;
@@ -527,7 +536,7 @@ html {
     text-transform: uppercase;
 }
 
-/*Фильтр каталога*/
+/**Фильтр каталога*/
 
 .catalog-all { 
     font-family: "PT Sans", Arial, sans-serif;   
@@ -550,7 +559,7 @@ html {
     text-transform: uppercase;
 }
 
-/*Button*/
+/**Button*/
 
 .button {
     font: inherit;
@@ -559,9 +568,9 @@ html {
     background-color: var(--basic-red);
     color: var(--basic-wight);
     border: none;
-    vertical-align: middle;    
+    vertical-align: middle;
     display: inline-block;
-    padding: 11px 40px;
+    padding: 7px 40px;
 }
 
 .button:active {
@@ -587,29 +596,30 @@ html {
     font-size: 30px;
     line-height: 30px;
     text-transform: uppercase;
+    font-weight: normal;
     color: var(--basic-grey);
     padding: 0;
     margin: 0;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    margin-left: 28px;    
+    padding-bottom: 28px;
+    padding-top: 29px;
+    margin-left: 28px;
 }
 
 .button-popular-tools {
     margin: 0;
     padding: 0;
-    padding: 10px 24px;
+    padding: 7px 24px;
     margin-right: 14px;
 }
 
 .button-popular-manufacturers {
     margin: 0;
     padding: 0;
-    padding: 10px 39px;
-    margin-right: 19px;
+    padding: 8px 39px;
+    margin-right: 18px;
 }
 
-/*Блок сортировка*/
+/**Блок сортировка*/
 
 .filter-result {
     display: grid;
@@ -675,7 +685,6 @@ html {
     margin-right: 10px;
 }
 
-
 .sorting-item a {
     color: var(--basic-black);
     opacity: 0.3
@@ -692,7 +701,7 @@ html {
     opacity: 1    
 }
 
-/*Карточка товара.*/ 
+/**Карточка товара.*/ 
 
 .catalog-list {
     display: grid;
@@ -717,7 +726,7 @@ html {
     grid-gap: 20px;
     padding: 0px;
     margin: 0px;
-    margin-top: 20px;
+    margin-top: 22px;
     margin-bottom: 70px;
 }
 
@@ -736,12 +745,12 @@ html {
    height: 164px;
    margin: 0;
    padding: 0;
-   margin-top: 6px;
+   margin-top: 8px;
    margin-bottom: 8px;
    margin-left: 18px;
    margin-right: 18px;
    justify-content: center;
-   align-items: center;     
+   align-items: center;
 }
 
 .catalog-card-title {
@@ -776,8 +785,6 @@ html {
     margin: 0px;
     margin-bottom: 13px;    
 }
-
-/*кнопки купить и в корзину будут всплывать как попапы с позционированием относительно карточки */
 
 .catalog-card-discount {
     font-weight: bold;
@@ -848,7 +855,8 @@ html {
    opacity: 0.3;   
 }
 
-/*Переключатель страниц*/
+/**Переключатель страниц*/
+
 .page-list {
     font-size: 13px;
     line-height: 18px;
@@ -891,7 +899,7 @@ html {
     padding: 0;
     margin: 0;
     margin-bottom: 70px;
-    margin-top: 20px;
+    margin-top: 21px;
     display: grid;
     grid-template-columns: repeat(4, 220px);
     grid-template-rows: repeat(2, 145px);
@@ -931,23 +939,24 @@ html {
     outline: none;
 }
 
-/*Блок с сервисом, гарантией и кредитом*/
+/**Блок с сервисом, гарантией и кредитом*/
 
 .services {
     background-color: var(--basic-background);
     background-image: url("../img/header.png");
-    background-position: center, 0 0; 
+    background-position: center, 0 0;
     background-repeat: no-repeat, repeat;
     width: 100%;
     padding: 0;
-    padding-top: 64px;
-    padding-bottom: 99px;
+    padding-top: 65px;
+    padding-bottom: 70px;
 }
 
 .services-heading {
     font-size: 30px;
     line-height: 30px;
     text-transform: uppercase;
+    font-weight: normal;
     margin: 0;
     padding: 0;
     padding-bottom: 25px;
@@ -989,12 +998,12 @@ html {
     margin: 0;
     padding: 0;
     padding-top: 13px;
-    padding-left: 20px;
+    padding-left: 22px;
     padding-bottom: 18px;
     width: 240px;
     text-align: start;
     vertical-align: middle;
-    display: inline-block;   
+    display: inline-block;
     background-color: var(--basic-grey);
     color: var(--basic-wight);
     border: none;
@@ -1012,14 +1021,19 @@ html {
     color: var(--basic-grey);
 }
 
-/*Картинки в CSS*/
 
-.service-submenu{
+.service-submenu {
     margin-left: 80px;
     flex-grow: 1;
 }
 
-.service-delivery::before {
+.service-delivery-text {
+    position: relative;
+    width: 283px;
+}
+
+
+.service-delivery-text::before {
     content: "";
     background-image: url(../img/delivery.svg);
     background-repeat: no-repeat;
@@ -1027,12 +1041,19 @@ html {
     width: 468px;
     height: 261px;
     position: absolute;
-    right: 210px;
+    left: 150px;
+    top: -39px;
+}
+
+.service-delivery-slogan {
+    width: 200px;
+
 }
 
 .service-submenu h3 {
     font-size: 30px;
     line-height: 30px;
+    font-weight: normal;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
@@ -1045,7 +1066,7 @@ html {
     line-height: 24px;
     margin: 0;
     padding: 0;
-    width: 313px;           
+              
 }
 
 service-guarantee p {
@@ -1058,7 +1079,7 @@ service-guarantee p {
     display: none;
 }
 
-.service-guarantee::before {
+.service-guarantee p::before {
     content: "";
     background-image: url(../img/guarantee.svg);
     background-repeat: no-repeat;
@@ -1069,7 +1090,7 @@ service-guarantee p {
     right: 210px;
 }
 
-.service-credit::before {
+.service-credit p::before {
     content: "";
     background-image: url(../img/credit.svg);
     background-repeat: no-repeat;
@@ -1084,11 +1105,12 @@ service-guarantee p {
     margin-top: 20px;
 }
 
-/*Блок о компании с картой*/
+/**Блок о компании с картой*/
+
 .columns-company {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 70px;    
+    margin-bottom: 69px;
 }
 
 .company {
@@ -1103,10 +1125,11 @@ service-guarantee p {
 .contacts h2 {
     font-size: 30px;
     line-height: 30px;
+    font-weight: normal;
     text-transform: uppercase;
     margin: 0px;
     margin-bottom: 24px;
-    margin-top: 70px;
+    margin-top: 72px;
 }
 
 .company p {
@@ -1117,17 +1140,20 @@ service-guarantee p {
 
 .company-text-shop {
     width: 478px;
+    margin-bottom: 25px;
 }
 
 .company-text-delivery {
     width: 400px;
+    margin-bottom: 2px;
 }
 
 .contacts p {
     font-family: "PT Sans", Arial, sans-serif;
     font-size: 13px;
     line-height: 24px;
-    width: 180px;    
+    width: 180px;
+    margin: 0;
 }
 
 .texnomart-delivery {
@@ -1135,6 +1161,9 @@ service-guarantee p {
     line-height: 24px;
     list-style: none;
     margin-bottom: 8px;
+    margin: 0;
+    padding: 0;
+    padding-left: 37px;
 }
 
 .texnomart-delivery li {
@@ -1143,12 +1172,13 @@ service-guarantee p {
 
 .button-company,
 .button-popup {
-    margin-top: 20px;
+    margin-top: 9px;
 }
 
 .button-popup {
-    padding-left: 61px;
-    padding-right: 62px;
+    padding-left: 62px;
+    padding-right: 61px;
+    margin-top: 18px;
 }
 
 .contacts img {
@@ -1182,13 +1212,14 @@ service-guarantee p {
     margin: 0;
 }
 
-/* footer*/
+/** footer*/
 
 .main-footer {
     background-color: var(--basic-grey);
     background-image: url("../img/footer.png");
     background-position: center, 0 0;
     background-repeat: no-repeat, repeat;
+    /* padding-top: 0px; */
 }
 
 .wrap-footer {
@@ -1201,16 +1232,17 @@ service-guarantee p {
     line-height: 24px;
     color: var(--special-wight);
     margin-bottom: 54px;
+    /* margin-left: 1px; */
 }
 
 .logo-footer {
     background-color: var(--basic-red);
     display: block;
     width: 220px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 18px;
+    padding-bottom: 14px;
     box-shadow: 0px 5px 0px var(--basic-shadow);
-    text-align: center; 
+    text-align: center;
 }
 
 .contacts-footer p {
@@ -1219,16 +1251,22 @@ service-guarantee p {
     color: var(--special-wight);
     padding: 0px;
     margin: 0px;
-    padding-top: 48px;
+    padding-top: 28px;
+    padding-left: 2px;
 }
 
 .contacts-footer a {
     color: var(--special-wight)
 }
 
+.tel-footer {
+    padding-left: 3px;
+
+}
+
 .wrapper-footer {
     flex-grow: 1;
-    padding-top: 30px;    
+    padding-top: 9px;
 }
 
 .navigation-footer {
@@ -1238,6 +1276,9 @@ service-guarantee p {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    padding-left: 10px;
+    margin: 0;
+    margin-top: 18px;
 }
 
 .navigation-footer li {
@@ -1261,6 +1302,9 @@ service-guarantee p {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    margin: 0;
+    margin-top: 9px;
+    padding-left: 33px;
 }
 
 .navigation-servic-footer li {
@@ -1307,22 +1351,23 @@ service-guarantee p {
     padding: 0px;
     margin: 0px;
     padding-top: 36px;
-    padding-bottom: 34px;
+    padding-bottom: 35px;
 }
 
 .text-footer-company {
-    width: 227px;    
+    width: 237px;
     margin-right: auto;
+    padding-left: 2px;
 }
 
 .text-footer-mail {
     width: 137px;
     margin-right: 51px;
-    margin-left: 118px;
+    margin-left: 119px;
 }
 
 .text-footer-copyright {
-    width: 98px;     
+    width: 98px;
     margin-right: 13px;
 }
 
@@ -1339,7 +1384,7 @@ service-guarantee p {
 .text-footer a:active {
     color: var(--special-red);
 }
-/*социальные кнопки*/
+/**социальные кнопки*/
 
 .social-list {
     display: flex;
@@ -1350,6 +1395,8 @@ service-guarantee p {
 
 .social-button {
     list-style: none;
+    width: 44px;
+    height: 44px;
 }
 
 .social-button:hover,
@@ -1358,13 +1405,13 @@ service-guarantee p {
     fill: var(--basic-red)
 }
 
-/* form-popup  */
+/** form-popup  */
 
 .form-popup {
     box-shadow: 0px 4px 20px var(--special-shadow);    
 }
 
-/**Сделать один класс*/
+/*!Сделать один класс*/
 .name-popup label,
 .email-popup label,
 .text-popup label {
