@@ -472,16 +472,87 @@ html {
     background-color: var(--special-orange);
     grid-column: 3/4;
 }
+/**slider*/
 
-.slider-item {
+.slider-all {
    display: block;
    grid-column: 1/3;
    grid-row: 2/4;
 }
 
-.slider-hammer-drill-text h3 {
+.slider {
+    width: 620px;
+    min-height: 266px;
+    position: relative;
+    color: var(--basic-wight);
+}
+
+.slide-1 {
+    background-color: var(--special-grey);
+    background-image: url(../img/hammer_drill.jpg);
+}
+
+.slide-2 {
+    background-color: var(--special-grey);
+    background-image: url(../img/drill.jpg);
+}
+
+
+.slider-list {
+    list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.slide {
+    display: none;
+}
+
+.slide-current {
+    display: block;
+}
+
+.slide-title {
+    font-size: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+    padding-top: 23px;
+    padding-left: 24px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.slider-item .slide-slogan {
+    font-size: 18px;
+    line-height: 24px;
+    padding-left: 24px;
+    margin-bottom: 113px;
+    font-weight: normal;
+}
+
+.slider-item .button-slider {
+    margin-left: 24px;
+    opacity: 1;
+    padding: 10px 46px;
+}
+
+.button-slider-controls {
+    padding: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--basic-wight);
+    border: 1px solid var(--basic-wight);
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    left: 310px;
+    top: 220px;
+}
+
+.button-back-slider {
+    left: 325px;
+    background-color: var(--basic-red);
+    border: 2px solid var(--basic-wight);
 }
 
 /**breadcrumbs*/
@@ -1016,38 +1087,23 @@ html {
     background-color: var(--special-grey);
 }
 
-.services-item button:active {
+.services-item button:active,
+.services-item-current button {
     background-color: var(--basic-wight);
     color: var(--basic-grey);
+    outline: none;
+    border: none;
 }
 
 
 .service-submenu {
+    display: none;
     margin-left: 80px;
-    flex-grow: 1;
+    flex-grow: 1;    
 }
 
-.service-delivery-text {
-    position: relative;
-    width: 283px;
-}
-
-
-.service-delivery-text::before {
-    content: "";
-    background-image: url(../img/delivery.svg);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    width: 468px;
-    height: 261px;
-    position: absolute;
-    left: 150px;
-    top: -39px;
-}
-
-.service-delivery-slogan {
-    width: 200px;
-
+.service-submenu-current {
+    display: block;    
 }
 
 .service-submenu h3 {
@@ -1069,17 +1125,40 @@ html {
               
 }
 
-service-guarantee p {
+.service-delivery-text {
     position: relative;
+    width: 283px;
 }
 
-/*Отлючил гарантию и кредит*/
+.service-delivery-text::before {
+    content: "";
+    background-image: url(../img/delivery.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 468px;
+    height: 261px;
+    position: absolute;
+    left: 150px;
+    top: -39px;
+}
+
+
+.service-delivery-slogan {
+    width: 200px;
+}
+
+.service-guarantee-text {
+    position: relative;
+    width: 320px;
+}
+
+/*Отлючил гарантию и кредит
 .service-guarantee,
 .service-credit {
     display: none;
-}
+}*/
 
-.service-guarantee p::before {
+.service-guarantee-text::before {
     content: "";
     background-image: url(../img/guarantee.svg);
     background-repeat: no-repeat;
@@ -1087,10 +1166,17 @@ service-guarantee p {
     width: 468px;
     height: 261px;
     position: absolute;
-    right: 210px;
+    left: 232px;
+    top: -39px;
 }
 
-.service-credit p::before {
+.service-credit-text {
+    position: relative;
+    width: 280px;
+}
+
+
+.service-credit-text::before {
     content: "";
     background-image: url(../img/credit.svg);
     background-repeat: no-repeat;
@@ -1098,7 +1184,8 @@ service-guarantee p {
     width: 468px;
     height: 261px;
     position: absolute;
-    right: 210px;
+    left: 163px;
+    top: -39px;
 }
 
 .button-credit {
