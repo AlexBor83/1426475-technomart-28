@@ -10,6 +10,7 @@
     --basic-greydark: #F9F5F0;
     --basic-background: #F1F5F7;
     --basic-wight: #FFFFFF;
+    --basic-foggy: #F4F4F4;
     --basic-black: #000000;
     --basic-shadow: #B52933;    
     --special-ylellow: #FFBF47;
@@ -58,7 +59,9 @@ html {
     height: 100%;
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -98,7 +101,7 @@ html {
     display: block;
     padding-top: 7px;
     padding-bottom: 7px;
- }
+}
 
 .logo-header {
     padding-left: 55px;
@@ -190,9 +193,6 @@ html {
 
 .main-header {
     background-color: var(--basic-background);
-    /*background-image: url("../img/header.png");
-    background-position: center, 0 0;
-    background-repeat: no-repeat, repeat;*/
     width: 100%;
     padding-bottom: 66px;
 }
@@ -200,7 +200,6 @@ html {
 .wrapper {
     display: grid;
     grid-template-columns: min-content 1fr min-content;
-    /* margin-bottom: 41px; */
 }
 
 .quote-header {
@@ -380,17 +379,12 @@ html {
 .navigation-header {
     list-style: none;
     margin: 0;
-    /* padding: 0; */
     background-color: var(--basic-grey);
     box-shadow: 0px 5px 0px var(--special-grey);
     display: flex;
     flex-wrap: wrap;
     padding: 0px 33px;
     justify-content: space-between;
-}
-
-.navigation-header li {
-    /* flex-grow: 1; */
 }
 
 .navigation-header a {
@@ -472,6 +466,7 @@ html {
     background-color: var(--special-orange);
     grid-column: 3/4;
 }
+
 /**slider*/
 
 .slider-all {
@@ -496,7 +491,6 @@ html {
     background-color: var(--special-grey);
     background-image: url(../img/drill.jpg);
 }
-
 
 .slider-list {
     list-style: none;
@@ -965,6 +959,7 @@ html {
 }
 
 /**Популярные производители*/
+
 .popular-manufacturers-list {
     list-style: none;
     padding: 0;
@@ -1014,9 +1009,6 @@ html {
 
 .services {
     background-color: var(--basic-background);
-    /*background-image: url("../img/header.png");
-    background-position: center, 0 0;
-    background-repeat: no-repeat, repeat;*/
     width: 100%;
     padding: 0;
     padding-top: 65px;
@@ -1095,7 +1087,6 @@ html {
     border: none;
 }
 
-
 .service-submenu {
     display: none;
     margin-left: 80px;
@@ -1122,7 +1113,6 @@ html {
     line-height: 24px;
     margin: 0;
     padding: 0;
-              
 }
 
 .service-delivery-text {
@@ -1152,12 +1142,6 @@ html {
     width: 320px;
 }
 
-/*Отлючил гарантию и кредит
-.service-guarantee,
-.service-credit {
-    display: none;
-}*/
-
 .service-guarantee-text::before {
     content: "";
     background-image: url(../img/guarantee.svg);
@@ -1174,7 +1158,6 @@ html {
     position: relative;
     width: 280px;
 }
-
 
 .service-credit-text::before {
     content: "";
@@ -1274,9 +1257,6 @@ html {
 
 .hammer-drill-text {
     background-color: var(--basic-background);
-    /*background-image: url("../img/header.png");
-    background-position: center, 0 0; 
-    background-repeat: no-repeat, repeat;*/
     padding-top: 64px;
     padding-bottom: 68px;    
 }
@@ -1303,10 +1283,6 @@ html {
 
 .main-footer {
     background-color: var(--basic-grey);
-    /*background-image: url("../img/footer.png");
-    background-position: center, 0 0;
-    background-repeat: no-repeat, repeat;*/
-    
 }
 
 .wrap-footer {
@@ -1319,7 +1295,6 @@ html {
     line-height: 24px;
     color: var(--special-wight);
     margin-bottom: 54px;
-    
 }
 
 .logo-footer {
@@ -1348,7 +1323,6 @@ html {
 
 .tel-footer {
     padding-left: 3px;
-
 }
 
 .wrapper-footer {
@@ -1422,10 +1396,7 @@ html {
 
 .bottom-footer {   
     color: var(--basic-wight);
-    background-color: var(--special-grey);
-    /*background-image: url("../img/footer_bottom.png");
-    background-position: center, 0 0;
-    background-repeat: no-repeat, repeat;*/
+    background-color: var(--special-grey);    
 }
 
 .wrap-bottom-footer {
@@ -1496,32 +1467,135 @@ html {
 }
 
 /** form-popup  */
+/** Цвет текста в input не могу сделать черным*/
 
 .form-popup {
-    box-shadow: 0px 4px 20px var(--special-shadow);    
+    display: none;
+    background-color: var(--basic-wight);
+    box-shadow: 0px 4px 20px var(--special-shadow);
+    color: var(--basic-black);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 620px;
+    border-top: 7px solid var(--basic-red);    
 }
 
-/*!Сделать один класс*/
-.name-popup label,
-.email-popup label,
-.text-popup label {
-    font: inherit;
+.form-popup form {
+    margin: 0;
+    margin-top: 46px;
+    position: relative;   
+}
+
+.form-popup-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 80px;
+    padding-right: 80px;
+}
+
+.form-popup-wrap {
+    width: 220px;
+}
+
+.form-popup-wrap label {
+    display: block;
     font-size: 18px; 
     line-height: 24px;
-    color: var(--basic-black);
+    margin-bottom: 11px;        
 }
 
-.name-popup input, 
-.email-popup input, 
-.text-popup textarea {
-    font: inherit;
+.text-popup {
+    width: 460px;
+}
+
+.text-popup label {
+    margin-top: 13px;
+}
+
+.form-popup-wrap input,
+.form-popup-wrap textarea {
+    box-sizing: border-box;
     background-color: transparent; 
     border: 2px solid var(--basic-greylight);
     border-radius: 2px;
+    color: var(--basic-black);
+    font-size: 13px; 
+    line-height: 24px;
+    width: 100%;
+    padding: 7px 12px;       
+}
+
+.form-popup-wrap textarea {
+    margin-bottom: 37px;
 }
 
 .bottom-form {
-    background-color: var(--basic-greylight);
+    widows: 620px;
+    display: ;
+    padding: 30px 0px;
+    background-color: var(--basic-foggy);
+}
+
+.button-form-popup {
+    padding: 7px 201px;
+    margin: 0 80px;
+}
+
+.button-close {
+    position: absolute;
+    background-color: var(--basic-wight);
+    outline: none;
+    border: 0;
+    top: 20px;
+    left: 580px;
+    width: 21px;
+    height: 21px;
+    cursor: pointer;        
+}
+
+.button-close::before,
+.button-close::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    width: 25px;
+    height: 3px;
+    background-color: var(--basic-red);
+}
+
+.button-close::before {
+    transform: rotate(45deg);
+}
+
+.button-close::after {
+    transform: rotate(-45deg);
+}
+
+/** Big-maps*/
+
+.big-maps {
+    display: none;
+    width: 943px;
+    height: 449px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 7px solid var(--basic-red)
+}
+
+.big-maps iframe {
+    border: none;
+}
+
+.map-close {
+    left: 900px;
+    width: 20px;
+    background-color: transparent;
 }
 
 .form-basket {

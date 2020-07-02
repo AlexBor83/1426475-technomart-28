@@ -254,7 +254,8 @@
           Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
         <div class="services-container">
           <ul class="services-list">
-            <li class="services-item services-item-delivery services-item-current"><button type="button">Доставка</button></li>
+            <li class="services-item services-item-delivery services-item-current"><button
+                type="button">Доставка</button></li>
             <li class="services-item services-item-guarantee"><button type="button">Гарантия</button></li>
             <li class="services-item services-item-credit"><button type="button">Кредит</button></li>
           </ul>
@@ -267,7 +268,8 @@
           </div>
           <div class="service-submenu service-guarantee">
             <h3>гарантия</h3>
-            <p class="service-guarantee-text">Если купленный у нас товар поломается или заискрит, а также в случае пожара,
+            <p class="service-guarantee-text">Если купленный у нас товар поломается или заискрит, а также в случае
+              пожара,
               спровоцированного его
               возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом
               уж
@@ -420,33 +422,33 @@
     </div>
   </footer>
 
-
   <section class="form-popup">
     <h2 class="visually-hidden">Форма отзыва</h2>
     <form action="https://echo.htmlacademy.ru" method="POST">
-
-      <div class="name-popup">
-        <input type="text" name="name" id="name" placeholder="Имя фамилия">
-        <label for="name">Ваше имя:</label>
-      </div>
-      <div class="email-popup">
-        <input type="email" name="mail" id="mail" placeholder="email@example.com">
-        <label for="mail">Ваше e-mail:</label>
-      </div>
-      <div class="text-popup">
-        <textarea name="text" id="text" rows="5" placeholder="В свободной форме"></textarea>
-        <label for="text">Текст письма:</label>
+      <div class="form-popup-wrapper">
+        <div class="form-popup-wrap name-popup">
+          <label for="name">Ваше имя:</label>
+          <input type="text" name="name" id="name" placeholder="Имя фамилия">
+        </div>
+        <div class="form-popup-wrap email-popup">
+          <label for="mail">Ваше e-mail:</label>
+          <input type="email" name="mail" id="mail" placeholder="email@example.com">
+        </div>
+        <div class="form-popup-wrap text-popup">
+          <label for="text">Текст письма:</label>
+          <textarea name="text" id="text" rows="5" placeholder="В свободной форме"></textarea>
+        </div>
       </div>
       <div class="bottom-form">
-        <button class="button" type="submit">отправить</button>
+        <button class="button button-form-popup" type="submit">отправить</button>
       </div>
     </form>
-    <button class="close" type="button">закрыть</button>
+    <button class="button-close" type="button" aria-label="Закрыть форму"></button>
   </section>
   <!-- Здесь будет карта -->
   <div class="big-maps">
-    <img src="img/map_all.png" width="940" height="449" alt="Общая карта c адресом офиса">
-    <button class="close" type="button">закрыть</button>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5989424124161!2d30.320894616331927!3d59.93879686904762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1593718912592!5m2!1sru!2sru" width="943" height="449" allowfullscreen title="Офис компании по адресу ул. Большая Конюшенная 19/18, Санкт-Петербург"></iframe>
+    <button class="button-close map-close" type="button" aria-label="Закрыть карту"></button>
   </div>
 
 
