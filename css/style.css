@@ -7,6 +7,7 @@
     --basic-grey: #32425C;
     --basic-greylight: #C5C5C5;
     --basic-ylellowlight: #F7F3EC;
+    --basic-brownlight: #A9A9A9;
     --basic-greydark: #F9F5F0;
     --basic-background: #F1F5F7;
     --basic-wight: #FFFFFF;
@@ -27,6 +28,7 @@
     --special-wight: #F3F7F9;
     --special-shadow: rgba(0, 0, 0, 0.15);
     --header-active: rgba(255, 255, 255, 0.5);
+    --border-filter:  rgba(0, 0, 0, 0.1);
     --border-social:  #212A3A;    
 }
 
@@ -78,7 +80,7 @@ input[type="radio"].visually-hidden {
     padding: 0 10px;
 }  
 
-/*Верх header*/
+/**Верх header*/
 
 .top-header {
     margin-bottom: -1px;
@@ -127,8 +129,6 @@ input[type="radio"].visually-hidden {
     position: relative;    
 }
 
-/**Как изменить цвет в placeholder="Поиск:"*/
-
 .search-input {
     box-sizing: border-box;
     display: block;
@@ -161,12 +161,55 @@ input[type="radio"].visually-hidden {
     margin-left: 23px;
     padding-right: 20px;
     padding-left: 20px;
+    position: relative;
+}
+
+.bookmarks-header svg{
+    opacity: 0.3;
+    fill: var(--basic-wight);
+    position: absolute;
+    left: 1px;
+    top: 11px;
+}
+
+.bookmarks-header svg:hover,
+.bookmarks-header svg:focus {
+    opacity: 1;
+}
+
+.bookmarks-header svg:active {
+    opacity: 0.3;
 }
 
 .basket-header {
     padding-right: 20px;
     padding-left: 20px;
     margin-left: 32px;
+    position: relative;
+}
+
+.basket-header svg {
+    opacity: 0.3;
+    fill: var(--basic-wight);
+    position: absolute;
+    left: 1px;
+    top: 11px;
+}
+
+.basket-header svg:hover,
+.basket-header svg:focus {
+    opacity: 1;
+}
+
+.basket-header svg:active {
+    opacity: 0.3;
+}
+
+/**Как сделать чтоб слился поиск и закладки*/
+
+.basket-header-catalog {
+    background-color: var(--basic-red);
+    padding-right: 23px;    
 }
 
 .pay-header {
@@ -220,6 +263,7 @@ input[type="radio"].visually-hidden {
     margin-top: 47px;
     text-align: center;
     width: 270px;
+    position: relative;    
 }
 
 .contacts-header a {
@@ -231,7 +275,19 @@ input[type="radio"].visually-hidden {
     padding-top: 4px;
     padding-bottom: 5px;
     padding-left: 27px;
-    border: 3px solid var(--basic-wight);
+    border: 3px solid var(--basic-wight);    
+}
+
+.contacts-header::before {
+    content: "";
+    background-image: url(../img/tel_icon.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 17px; 
+    height: 18px;       
+    top: 12px;
+    right: 217px;
+    position: absolute;
 }
 
 .contacts-header p {
@@ -262,16 +318,20 @@ input[type="radio"].visually-hidden {
     position: relative;
 }
 
-.registration-enter::before {
-    content: "";
-    background-image: url(../img/input_output_icon.svg);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    width: 20px; 
-    height: 18px;
+.registration-enter svg{
     position: absolute;
-    top: 15px;
-    left: 20px;    
+    top: 16px;
+    left: 12px;
+    fill: var(--basic-greylight);
+}
+
+.registration-enter svg:focus,
+.registration-enter svg:hover {
+    fill: var(--special-grey);
+}
+
+.registration-enter svg:active {
+    fill: var(--basic-greylight)
 }
 
 .registration-user {
@@ -319,37 +379,39 @@ input[type="radio"].visually-hidden {
 
 .user-enter {
     padding-left: 50px;
-    padding-right: 50px;
+    padding-right: 50px;    
 }
 
-.user-enter::before {
-    content: "";
-    background-image: url(../img/user_icon.svg);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    width: 20px; 
-    height: 18px;
+.user-enter svg {
     position: absolute;
     top: 12px;
     left: 15px;
+    fill: var(--basic-greylight);
 }
 
-.user-exit::after {
-    content: "";
-    background-image: url(../img/input_output_icon.svg);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    width: 20px; 
-    height: 18px;
+.user-exit svg {
     position: absolute;
     top: 12px;
     left: -40px;
     transform: rotate(180deg);
+    fill: var(--basic-greylight);
 }
 
 .user-enter:active,
 .user-exit:active {
     color: var(--basic-greylight)
+}
+
+.user-enter svg:focus,
+.user-enter svg:hover,
+.user-exit svg:focus,
+.user-exit svg:hover {
+    fill: var(--special-grey);
+}
+
+.user-enter svg:active,
+.user-exit svg:active {
+    fill: var(--basic-greylight)
 }
 
 .user-cabinet {
@@ -410,7 +472,7 @@ input[type="radio"].visually-hidden {
 }
 
 /**main*/
-/*ГРИД со слайдером*/
+/**ГРИД со слайдером*/
 
 .products-services {
     margin-bottom: 60px;   
@@ -418,6 +480,7 @@ input[type="radio"].visually-hidden {
 
 .products-services-list {
     list-style: none;
+    color: var(--basic-wight);
     padding: 0;
     margin: 0;
     display: grid;
@@ -435,36 +498,65 @@ input[type="radio"].visually-hidden {
     font-weight: bold;
     padding: 0;
     margin: 0;
+    margin-top: 20px;
+    margin-left: 23px;
+    margin-bottom: 14px;    
 }
 
-.products-services-item a {
+/**Не могу сделать чтоб текст был белым, и чтоб его видно было (пока сделал красным)*/
+.products-services-slogan {
     font-size: 14px;
     line-height: 18px;
     text-transform: uppercase;
-    color: var(--basic-wight);
-    opacity: 0.3;
+    color: red;
+    background-color: var(--basic-wight);
+    opacity: 0.3;    
+    margin: 0;
+    padding: 0;
+    padding: 10px 23px;
+    margin-left: 23px;      
+}
+
+.products-services-slogan:hover,
+.products-services-slogan:focus {
+    background-color: var(--basic-greylight);
+}
+
+.products-services-slogan:active {
+    background-color: var(--basic-brownlight);
+}
+
+.products-services-item img {
+    position: absolute;
+    top: 20px;
+    left: 210px;
 }
 
 .backdrop-orange {
     background-color: var(--special-ylellow);
+    position: relative;
 }
 
 .backdrop-blue {
     background-color: var(--special-blue);
+    position: relative;
 }
 
 .backdrop-violet {
     background-color: var(--special-lilac);
+    position: relative;
 }
 
 .backdrop-green {
     background-color: var(--special-greenlight);
     grid-column: 3/4;
+    position: relative;
 }
 
 .backdrop-yellow {
     background-color: var(--special-orange);
     grid-column: 3/4;
+    position: relative;
 }
 
 /**slider*/
@@ -612,19 +704,128 @@ input[type="radio"].visually-hidden {
     align-content: start;    
 }
 
+.filter-title {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+    width: 200px;
+    color: var(--basic-black);       
+    background-color: var(--basic-ylellowlight);
+    padding: 0;
+    margin: 0;
+    margin-bottom: 14px;
+    padding-left: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/**Слайдер по цене*/
+
+.filter-item {
+    border: none;
+    margin: 0;
+    padding: 0;   
+}
+
 .legend {
     font-size: 17px;
     line-height: 30px;
+    width: 100%;
     text-transform: uppercase;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--border-filter);
+    padding-top: 16px;
+    margin-bottom: 17px;   
 }
 
-.filter ul {
+.filter-item ul {
     list-style: none;
     font-size: 15px;
     line-height: 19px;
     text-transform: uppercase;
+    margin: 0;
+    padding: 0;
 }
+
+.filter-checkbox {
+    margin-bottom: 19px;
+}
+
+.checkbox-check {
+    display: inline-block;
+    vertical-align: middle;
+    width: 23px;
+    height: 23px;
+    border: 2px solid var(--basic-greylight);
+    margin-right: 10px;
+    border-radius: 2px;
+    position: relative;    
+}
+
+.checkbox-check::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/checked_icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px auto;
+    opacity: 0;
+}
+
+.checkbox-input {
+    display: none;
+}
+
+/**не получется сделать галочку при нажатии но радио кнопка получилась*/
+.checkbox-input:checked + .checkbox-check::after {
+    opacity: 1;
+}
+
+legend-radio {
+    margin-bottom: 23px;
+}
+
+.filter-radio-button {
+    margin-bottom: 23px;
+}
+
+.radio-input {
+    display: none;
+}
+
+.radio-disk {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 5px solid var(--basic-greylight);    
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.radio-disk::after {
+    content: '';
+    width: 9px;
+    height: 9px;    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.radio-input:checked + .radio-disk::after {
+    background-color: var(--basic-greylight);
+}    
 
 /**Button*/
 
@@ -801,6 +1002,17 @@ input[type="radio"].visually-hidden {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--special-greylight);
+    position: relative;
+}
+
+.new-card::after {
+    content: "";
+    position: absolute;
+    background-image: url(../img/icon_new.png);
+    top: 0px;
+    right: 0px;
+    width: 70px;
+    height: 70px;
 }
 
 .img-wrap {
@@ -850,12 +1062,16 @@ input[type="radio"].visually-hidden {
     margin-bottom: 13px;    
 }
 
+.catalog-card-price-not {
+    visibility: hidden;
+}
+
 .catalog-card-discount {
     font-weight: bold;
     font-size: 17px; 
     line-height: 18px;
     color: var(--basic-wight);
-    background-color: var(--basic-red);
+    background-image: url(../img/border_discount.png);
     text-transform: uppercase;
     display: block;
     text-align: center;
@@ -866,7 +1082,7 @@ input[type="radio"].visually-hidden {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 32px;
-    padding-right: 44px;    
+    padding-right: 43px;    
 }
 
 .catalog-card-popup {
@@ -1131,7 +1347,6 @@ input[type="radio"].visually-hidden {
     left: 150px;
     top: -39px;
 }
-
 
 .service-delivery-slogan {
     width: 200px;
@@ -1442,6 +1657,7 @@ input[type="radio"].visually-hidden {
 .text-footer a:active {
     color: var(--special-red);
 }
+
 /**социальные кнопки*/
 
 .social-list {
@@ -1534,7 +1750,6 @@ input[type="radio"].visually-hidden {
 
 .bottom-form {
     widows: 620px;
-    display: ;
     padding: 30px 0px;
     background-color: var(--basic-foggy);
 }
@@ -1598,6 +1813,52 @@ input[type="radio"].visually-hidden {
     background-color: transparent;
 }
 
-.form-basket {
-    display: none;
+/**madal-form-basket*/
+
+.madal-form-basket {
+    width: 620px;
+    height: 283px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 7px solid var(--basic-red);
+    display: none;        
+}
+
+.madal-form-basket h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    padding-top: 73px;
+    padding-left: 160px;
+    padding-bottom: 68px;
+    background-color: var(--basic-wight);    
+}
+
+.madal-form-basket::after {
+    content: "";
+    position: absolute;
+    background-image: url(../img/form_basket_icon.svg);
+    top: 55px;
+    left: 80px;
+    width: 66px;
+    height: 66px;    
+}
+
+.vrap-madal-form-basket {
+    background-color: var(--special-wight);
+    padding-top: 37px;
+    padding-bottom: 37px;   
+}
+
+.button-buy {   
+    margin-left: 114px;
+    margin-right: 10px;        
+}
+
+.button-next {
+    color: var(--basic-black);
+    background-color: var(--basic-wight);    
 }
