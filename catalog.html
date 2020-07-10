@@ -28,30 +28,18 @@
           </label>
           <button type="submit" class="visually-hidden">Кнопка поиска</button>
         </form>
-        <a class="bookmarks-header" href="blank.html">
-          <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
-            <path
-              d="M14 15C14 15.55 13.632 15.741 13.182 15.426L7.819 11.661C7.369 11.346 6.632 11.346 6.182 11.661L0.818 15.426C0.368 15.741 0 15.55 0 15V1C0 0.45 0.45 0 1 0H13C13.55 0 14 0.45 14 1V15Z" />
-          </svg> Закладки: 0</a>
-        <a class="basket-header basket-header-catalog" href="blank.html">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-            <path
-              d="M4.5 15C5.32843 15 6 14.3284 6 13.5C6 12.6716 5.32843 12 4.5 12C3.67157 12 3 12.6716 3 13.5C3 14.3284 3.67157 15 4.5 15Z" />
-            <path
-              d="M12.5 15C13.3284 15 14 14.3284 14 13.5C14 12.6716 13.3284 12 12.5 12C11.6716 12 11 12.6716 11 13.5C11 14.3284 11.6716 15 12.5 15Z" />
-            <path d="M15 2H4.07L3.648 0H0V2H2.031L4.016 11H15V9H9.441L15 6.951V2Z" />
-          </svg>Корзина: 10</a>
+        <a class="button-header bookmarks-header" href="blank.html">Закладки: 0</a>
+        <a class="button-header basket-header basket-header-active" href="blank.html">Корзина: 10</a>
         <a class="pay-header" href="blank.html">Оформить заказ</a>
       </div>
     </div>
-
     <div class="main-header">
       <div class="container">
         <div class="wrapper">
           <p class="quote-header">
             Интернет-магазин
             строительных материалов
-            и инструментов для ремонта
+            и&nbsp;инструментов для ремонта
           </p>
           <div class="contacts-header">
             <a href="tel:+78125550555">+7 (812) 555-05-55</a>
@@ -66,16 +54,24 @@
                 </svg>
                 Равшан Джамшутович</a>
               <a class="user-exit" href="blank.html" aria-label="выйти">
-                <svg width="20" height="17" viewBox="0 0 20 17" fill="none">
-                  <path d="M14.1667 8.5L5.71429 0V6H0V11H5.71429V17L14.1667 8.5Z" />
+                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 9L11.125 0.5V6.5H5.125V11.5H11.125V17.5L20 9Z" />
                   <path
-                    d="M16.1771 15.01H11.3895V17H16.1771C18.2514 17 19.0381 15.19 19.0619 13.974V3.028C19.0381 1.811 18.2514 0 16.1771 0H11.3895V1.99H16.1771C16.9762 1.99 17.1219 2.671 17.1391 3.047V13.951C17.1229 14.327 16.9762 15.01 16.1771 15.01Z" />
+                    d="M2.10601 14.452V3.548C2.12401 3.172 2.27701 2.491 3.11601 2.491H8.14301V0.5H3.11601C0.938006 0.5 0.112006 2.31 0.0870056 3.527V14.473C0.112006 15.689 0.938006 17.5 3.11601 17.5H8.14301V15.51H3.11601C2.27701 15.51 2.12401 14.827 2.10601 14.452Z" />
                 </svg>
               </a>
             </div>
             <div class="user-cabinet">
               <a class="user-cabinet-order" href="blank.html">Мои заказы</a>
-              <a href="blank.html">Личный кабинет</a>
+              <a class="user-cabinet-exit" href="blank.html">
+                <svg width="4" height="5" viewBox="0 0 4 5" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.00023 0.994136C3.09715 0.994136 3.98643 1.88356 3.98643 2.9801C3.98643 4.07757 3.09715 4.96646 2.00023 4.96646C0.903104 4.96646 0.013898 4.07757 0.013898 2.9801C0.013898 1.88356 0.903104 0.994136 2.00023 0.994136Z" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.00023 0.994136C3.09715 0.994136 3.98643 1.88356 3.98643 2.9801C3.98643 4.07757 3.09715 4.96646 2.00023 4.96646C0.903104 4.96646 0.013898 4.07757 0.013898 2.9801C0.013898 1.88356 0.903104 0.994136 2.00023 0.994136Z" />
+                </svg>
+                Личный кабинет
+              </a>
             </div>
           </div>
         </div>
@@ -131,54 +127,71 @@
         <li class="breadcrumbs-hammer-drill">Перфораторы</li>
       </ul>
       <h1 class="name-page">Перфораторы</h1>
-
       <div class="catalog-all">
         <section class="filter">
           <h2 class="filter-title">фильтр:</h2>
-
-          <!--Форм с ползунком-->
-          <form  action="https://echo.htmlacademy.ru" method="GET">
+          <form action="https://echo.htmlacademy.ru" method="GET">
+            <fieldset class="filter-item">
+              <legend class="legend legend-price">Цена:</legend>
+              <div class="range-filter">
+                <div class="range-controls">
+                  <div class="scale">
+                    <div class="bar"></div>
+                  </div>
+                  <div class="toggle toggle-min"></div>
+                  <div class="toggle toggle-max"></div>
+                </div>
+                <div class="price-controls">
+                  <label aria-label="от">
+                    <input type="number" name="min-price" value="0" a>
+                  </label>
+                  <label class="max-price" aria-label="до">
+                    <input class="max-price-input" type="number" name="max-price" value="30000">
+                  </label>
+                </div>
+              </div>
+            </fieldset>
             <fieldset class="filter-item">
               <legend class="legend">производители:</legend>
               <ul>
                 <li class="filter-checkbox">
                   <label class="checkbox-label">
-                    <input class="checkbox-input" type="checkbox-input" name="bosh" checked>
+                    <input class="checkbox-input" type="checkbox" name="bosch" checked>
                     <span class="checkbox-check"></span>
-                    bosh
+                    bosch
                   </label>
                 </li>
                 <li class="filter-checkbox">
                   <label class="checkbox-label">
-                    <input class="checkbox-input" type="checkbox-input" name="interscol">
+                    <input class="checkbox-input" type="checkbox" name="interscol">
                     <span class="checkbox-check"></span>
                     интерскол
                   </label>
                 </li>
                 <li class="filter-checkbox">
                   <label class="checkbox-label">
-                    <input class="checkbox-input" type="checkbox-input" name="makita" checked>
+                    <input class="checkbox-input" type="checkbox" name="makita" checked>
                     <span class="checkbox-check"></span>
                     makita
                   </label>
                 </li>
                 <li class="filter-checkbox">
                   <label class="checkbox-label">
-                    <input class="checkbox-input" type="checkbox-input" name="dewalt">
+                    <input class="checkbox-input" type="checkbox" name="dewalt">
                     <span class="checkbox-check"></span>
                     dewalt
                   </label>
                 </li>
                 <li class="filter-checkbox">
                   <label class="checkbox-label">
-                    <input class="checkbox-input" type="checkbox-input" name="hitachi">
+                    <input class="checkbox-input" type="checkbox"" name=" hitachi">
                     <span class="checkbox-check"></span>
                     hitachi
                   </label>
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="filter-item">
+            <fieldset class="filter-item filter-item-radio">
               <legend class="legend legend-radio">питание:</legend>
               <ul>
                 <li class="filter-radio-button">
@@ -200,12 +213,11 @@
             <button class="filter-button button" type="submit">Показать</button>
           </form>
         </section>
-
         <div class="filter-result">
-          <section class="sorting">
+          <section class="sorting-subject">
             <h2>Сортировка:</h2>
             <ul class="sorting-list">
-              <li class="sorting-item sorting-price">
+              <li class="sorting-item sorting-price sorting-price-active">
                 <a href="blank.html">По цене</a>
               </li>
               <li class="sorting-item sorting-type">
@@ -214,19 +226,19 @@
               <li class="sorting-item sorting-functions">
                 <a href="blank.html">По функционалу</a>
               </li>
-              <li class="sorting-item sorting-up">
+              <li class="sorting sorting-up sorting-active">
                 <a href="blank.html">
                   <span class="visually-hidden">По возрастанию</span>
                   <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
-                    <path path d="M5.66241 0L11.1624 10L0.162415 10" fill="#C5C5C5" />
+                    <path path d="M5.66241 0L11.1624 10L0.162415 10" />
                   </svg>
                 </a>
               </li>
-              <li class="sorting-item sorting-down">
+              <li class="sorting sorting-down">
                 <a href="blank.html">
                   <span class="visually-hidden">По убыванию</span>
                   <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
-                    <path d="M5.66241 10L0.162415 0H11.1624" fill="#C5C5C5" />
+                    <path d="M5.66241 10L0.162415 0H11.1624" />
                   </svg>
                 </a>
               </li>
@@ -246,8 +258,8 @@
                   <del class="catalog-card-price">30500 Р.</del>
                   <a class="catalog-card-discount" href="blank.html">25500 Р.</a>
                   <div class="catalog-card-popup">
-                    <button class="buy-button" type="button">Купить</button>
-                    <button class="bookmark-button" type="button">В закладки</button>
+                    <button class="catalog-card-button buy-button" type="button">Купить</button>
+                    <button class="catalog-card-button bookmark-button" type="button">В закладки</button>
                   </div>
                 </section>
               </li>
@@ -262,13 +274,13 @@
                   <del class="catalog-card-price">30500 Р.</del>
                   <a class="catalog-card-discount" href="blank.html">25500 Р.</a>
                   <div class="catalog-card-popup">
-                    <button class="buy-button" type="button">Купить</button>
-                    <button class="bookmark-button" type="button">В закладки</button>
+                    <button class="catalog-card-button buy-button" type="button">Купить</button>
+                    <button class="catalog-card-button bookmark-button" type="button">В закладки</button>
                   </div>
                 </section>
               </li>
               <li>
-                <section class="catalog-card">
+                <section class="catalog-card catalog-card-active new-card">
                   <div class="img-wrap">
                     <img src="img/bosh_bfg_6000.jpg" width="144" height="128" alt="Перфоратор BOSCH BFG 6000">
                   </div>
@@ -278,8 +290,8 @@
                   <del class="catalog-card-price">30500 Р.</del>
                   <a class="catalog-card-discount" href="blank.html">25500 Р.</a>
                   <div class="catalog-card-popup">
-                    <button class="buy-button" type="button">Купить</button>
-                    <button class="bookmark-button" type="button">В закладки</button>
+                    <button class="catalog-card-button buy-button" type="button">Купить</button>
+                    <button class="catalog-card-button bookmark-button" type="button">В закладки</button>
                   </div>
                 </section>
               </li>
@@ -294,8 +306,8 @@
                   <del class="catalog-card-price">22500 Р.</del>
                   <a class="catalog-card-discount" href="blank.html">15500 Р.</a>
                   <div class="catalog-card-popup">
-                    <button class="buy-button" type="button">Купить</button>
-                    <button class="bookmark-button" type="button">В закладки</button>
+                    <button class="catalog-card-button buy-button" type="button">Купить</button>
+                    <button class="catalog-card-button bookmark-button" type="button">В закладки</button>
                   </div>
                 </section>
               </li>
@@ -310,8 +322,8 @@
                   <del class="catalog-card-price">30500 Р.</del>
                   <a class="catalog-card-discount" href="blank.html">25500 Р.</a>
                   <div class="catalog-card-popup">
-                    <button class="buy-button" type="button">Купить</button>
-                    <button class="bookmark-button" type="button">В закладки</button>
+                    <button class="catalog-card-button buy-button" type="button">Купить</button>
+                    <button class="catalog-card-button bookmark-button" type="button">В закладки</button>
                   </div>
                 </section>
               </li>
@@ -326,8 +338,8 @@
                   <del class="catalog-card-price catalog-card-price-not">12500 Р.</del>
                   <a class="catalog-card-discount" href="blank.html">12500 Р.</a>
                   <div class="catalog-card-popup">
-                    <button class="buy-button" type="button">Купить</button>
-                    <button class="bookmark-button" type="button">В закладки</button>
+                    <button class="catalog-card-button buy-button" type="button">Купить</button>
+                    <button class="catalog-card-button bookmark-button" type="button">В закладки</button>
                   </div>
                 </section>
               </li>
@@ -342,8 +354,8 @@
                   <del class="catalog-card-price">22500 Р.</del>
                   <a class="catalog-card-discount" href="blank.html">15500 Р.</a>
                   <div class="catalog-card-popup">
-                    <button class="buy-button" type="button">Купить</button>
-                    <button class="bookmark-button" type="button">В закладки</button>
+                    <button class="catalog-card-button buy-button" type="button">Купить</button>
+                    <button class="catalog-card-button bookmark-button" type="button">В закладки</button>
                   </div>
                 </section>
               </li>
@@ -358,8 +370,8 @@
                   <del class="catalog-card-price">30500 Р.</del>
                   <a class="catalog-card-discount" href="blank.html">25500 Р.</a>
                   <div class="catalog-card-popup">
-                    <button class="buy-button" type="button">Купить</button>
-                    <button class="bookmark-button" type="button">В закладки</button>
+                    <button class="catalog-card-button buy-button" type="button">Купить</button>
+                    <button class="catalog-card-button bookmark-button" type="button">В закладки</button>
                   </div>
                 </section>
               </li>
@@ -374,15 +386,15 @@
                   <del class="catalog-card-price catalog-card-price-not">12500 Р.</del>
                   <a class="catalog-card-discount" href="blank.html">12500 Р.</a>
                   <div class="catalog-card-popup">
-                    <button class="buy-button" type="button">Купить</button>
-                    <button class="bookmark-button" type="button">В закладки</button>
+                    <button class="catalog-card-button buy-button" type="button">Купить</button>
+                    <button class="catalog-card-button bookmark-button" type="button">В закладки</button>
                   </div>
                 </section>
               </li>
             </ul>
           </section>
           <ol class="page-list">
-            <li class="page-item">
+            <li class="page-item page-item-active">
               <a href="">1</a>
             </li>
             <li class="page-item">
@@ -513,14 +525,13 @@
   </footer>
 
   <section class="madal-form-basket">
-    <h2>Товар добавлен в корзину</h2>
+    <h2>Товар добавлен в корзину!</h2>
     <div class="vrap-madal-form-basket">
       <a class="button button-buy" href="blank.html">oформить заказ</a>
       <a class="button button-next" href="catalog.html">продолжить покупки</a>
     </div>
-    <button class="button-close close-basket" type="button" aria-label="Закрыть форму"></button>
+    <button class="button-close button-close-basket" type="button" aria-label="Закрыть форму"></button>
   </section>
 
 </body>
-
 </html>
