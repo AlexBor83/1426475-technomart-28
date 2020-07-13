@@ -22,15 +22,21 @@
     --special-yellowlight: #FFD180;
     --special-success: #5FBB2D;
     --special-red: #BA2732;
+    --special-red-focus-hover: #CA2C37;
     --special-grey: #293449;
+    --special-grey-top-border: #405069;
     --special-greydark:#1D2739;
     --special-greylight: #EAEAEA;
     --special-wight: #F3F7F9;
-    --special-wight-opacity: rgba(255, 255, 255, 0.3);;
+    --products-services-focus:  rgba(77, 77, 77, 0.3);
+    --products-services-active:  rgba(66, 66, 66, 0.3);
+    --filtr-greenlight: #00CA74;
+    --special-wight-opacity: rgba(255, 255, 255, 0.3);
     --special-shadow: rgba(0, 0, 0, 0.15);
     --header-active: rgba(255, 255, 255, 0.5);
     --border-filter:  rgba(0, 0, 0, 0.1);
-    --border-social:  #212A3A;    
+    --border-social:  #212A3A;
+
 }
 
 body {
@@ -51,7 +57,7 @@ body {
 
 a {
     text-decoration: none;
-    }
+}
 
 img {
     max-width: 100%;
@@ -137,7 +143,11 @@ input[type="radio"].visually-hidden {
     font: inherit;
 }
 
-.search-input:focus {
+::-webkit-input-placeholder {
+    color: var(--basic-wight)
+}
+
+.search-input:hover {
     background-color: var(--basic-wight);      
 }
 
@@ -145,10 +155,10 @@ input[type="radio"].visually-hidden {
     position: absolute;
     left: 16px;
     top: 11px;
-    fill: var(--basic-wight);    
+    fill: var(--basic-brownlight);    
 }
 
-.search-input:focus + svg {
+.search-input:hover + svg {
     fill: var(--basic-red);    
 } 
 
@@ -202,7 +212,7 @@ input[type="radio"].visually-hidden {
 }
 
 .pay-header {
-    background-color: var(--basic-green);    
+    background-color: var(--basic-greenlight);    
     padding: 19px 17px;
 }
 
@@ -211,13 +221,14 @@ input[type="radio"].visually-hidden {
     color: var(--header-active);
 }
 
-.pay-header:focus {
-    background-color: var(--special-success);
+.pay-header:focus,
+.pay-header:hover {
+    background-color: var(--basic-green);
+    color: var(--header-active);
 }
 
 .pay-header:active {
-    background-color: var(--basic-green);
-    color:var(--header-active);
+    color:var(--basic-wight);
 }
 
 /**Основной header*/
@@ -304,22 +315,13 @@ input[type="radio"].visually-hidden {
     padding-bottom: 12px;
     margin-right: 8px;
     position: relative;
+    fill: var(--basic-greylight);
 }
 
 .registration-enter svg {
     position: absolute;
     top: 16px;
-    left: 19px;
-    fill: var(--basic-greylight);
-}
-
-.registration-enter svg:focus,
-.registration-enter svg:hover {
-    fill: var(--special-grey);
-}
-
-.registration-enter svg:active {
-    fill: var(--basic-greylight)
+    left: 19px;    
 }
 
 .registration-user {
@@ -338,10 +340,12 @@ input[type="radio"].visually-hidden {
 .registration a:focus,
 .registration a:hover {
     color: var(--basic-red);
+    fill: var(--special-grey);
 }
 
 .registration a:active {
     color: var(--basic-greylight);
+    fill: var(--basic-greylight)
 }
 
 .user-wrapper {
@@ -362,43 +366,38 @@ input[type="radio"].visually-hidden {
     margin: 0px;
     padding-top: 12px;
     padding-bottom: 12px;
-    position: relative;     
+    position: relative;
+    fill: var(--basic-greylight);     
 }
 
 .user-enter {
     padding-left: 56px;
-    padding-right: 50px;    
+    padding-right: 50px;        
 }
 
 .user-enter svg {
     position: absolute;
     top: 12px;
-    left: 15px;
-    fill: var(--basic-greylight);
+    left: 15px;    
 }
 
 .user-exit svg {
     position: absolute;
     top: 13px;
     left: -37px;
-    fill: var(--basic-greylight);
+}
+
+.user-enter:focus,
+.user-enter:hover,
+.user-exit:focus,
+.user-exit:hover {
+    fill: var(--special-grey);
 }
 
 .user-enter:active,
 .user-exit:active {
-    color: var(--basic-greylight)
-}
-
-.user-enter svg:focus,
-.user-enter svg:hover,
-.user-exit svg:focus,
-.user-exit svg:hover {
-    fill: var(--special-grey);
-}
-
-.user-enter svg:active,
-.user-exit svg:active {
-    fill: var(--basic-greylight)
+    color: var(--basic-greylight);
+    fill: var(--basic-greylight);
 }
 
 .user-cabinet {
@@ -491,6 +490,11 @@ input[type="radio"].visually-hidden {
     padding: 7px 40px;
 }
 
+.button:hover,
+.button:focus {
+    background-color: var(--special-red-focus-hover);
+}
+
 .button:active {
     background-color: var(--special-red);
 }
@@ -543,11 +547,11 @@ input[type="radio"].visually-hidden {
 
 .products-services-slogan:hover,
 .products-services-slogan:focus {
-    background-color: var(--basic-greylight);
+    background-color: var(--products-services-focus);
 }
 
 .products-services-slogan:active {
-    background-color: var(--basic-brownlight);
+    background-color: var( --products-services-active);
 }
 
 .products-services-item img {
@@ -710,7 +714,6 @@ input[type="radio"].visually-hidden {
     color: var(--basic-black);
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
     margin: 0;
     padding: 0;
     margin-top: 10px;
@@ -723,7 +726,7 @@ input[type="radio"].visually-hidden {
     position: relative;
     margin-right: 41px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 11px;
     display: block;
 }
 
@@ -808,7 +811,7 @@ input[type="radio"].visually-hidden {
 
 .range-filter {
     width: 220px;
-    margin-bottom: 27px;
+    margin-bottom: 25px;
 }
 
 .range-controls {
@@ -830,7 +833,7 @@ input[type="radio"].visually-hidden {
 .scale .bar {
     width: 85%;
     height: 2px;
-    background: var(--basic-greenlight);
+    background: var(--filtr-greenlight);
     border: none;
 }
 
@@ -936,9 +939,18 @@ input[type="radio"].visually-hidden {
     border-color: transparent;
 }
 
+.checkbox-input:disabled + .checkbox-check {
+   opacity: 0.4;
+}
+
 .checkbox-input:checked + .checkbox-check::after {
     opacity: 1;    
 }
+
+.checkbox-input:disabled + .checkbox-check::after {
+    opacity: 0.3;    
+}
+
 
 .filter-item-radio {
     margin-top: 8px;
@@ -981,11 +993,21 @@ input[type="radio"].visually-hidden {
 }
 
 .radio-input:checked + .radio-disk::after {
-    background-color: var(--basic-greylight);
+    background-color: var(--basic-greylight);    
 }    
 
+.radio-input:disabled + .radio-disk::after {
+    opacity: 0.3;
+    background-color: var(--basic-greylight);    
+}
+
+.radio-input:disabled {
+    opacity: 0.4;
+    background-color: var(--basic-greylight);    
+}
+
 .filter-button {
-    margin-top: 15px;
+    margin-top: 17px;
     font-size: 13px;
     line-height: 18px;
     background-color: var(--basic-wight);
@@ -1116,7 +1138,6 @@ input[type="radio"].visually-hidden {
 
 .sorting-down svg {
     margin: 0;
-
 }
 
 .sorting svg:focus,
@@ -1130,8 +1151,6 @@ input[type="radio"].visually-hidden {
 }
 
 /**Карточка товара.*/ 
-
-/**В карточке товара высавил чтоб совпадали строки цены, скидки и т.д, не могу выставить фото товара, или это еще кучу класов заводить для каждого фото, но помоему это какойто костыль*/
 
 .catalog-list {
     display: grid;
@@ -1163,8 +1182,8 @@ input[type="radio"].visually-hidden {
 
 .catalog-card {
     font-family: "PT Sans", Arial, sans-serif ;
-    width: 220px;
-    min-height: 318px;
+    width: 219px;
+    height: 315px;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--special-greylight);
@@ -1196,34 +1215,37 @@ input[type="radio"].visually-hidden {
 .catalog-card-button {
     font: inherit;
     width: 135px;
-    height: 40px;
+    height: 37px;
     font-size: 14px;
     line-height: 18px;
     text-align: center;
     text-transform: uppercase;
     margin: 0 auto;
-    padding: 0;    
 }
 
 .buy-button {
     color: var(--basic-wight);
     background-color: var(--basic-green);
-    margin-top: 8px;
+    margin-top: 7px;
+    padding-left: 16px;
+    border: none;
+    outline: none;
     position: relative;
+    box-shadow: 0px 3px 0px var(--basic-shadowgreen);
 }
 
 .buy-button::before {
     content: "";
     position: absolute;
-    left: 26px;
-    top: 9px;
+    left: 28px;
+    top: 11px;
     background-image: url(../img/basket-header_icon.svg);
     background-position: center;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
     width: 15px;
     height: 15px;
+    opacity: 0.3;
 }
-
 
 .bookmark-button {
     color: var(--basic-grey);
@@ -1236,7 +1258,6 @@ input[type="radio"].visually-hidden {
 .buy-button:hover,
 .buy-button:focus {
     background-color: var(--basic-greenlight);
-    box-shadow: 0px 3px 0px var(--basic-shadowgreen);
 }
 
 .bookmark-button:hover,
@@ -1246,7 +1267,8 @@ input[type="radio"].visually-hidden {
 
 .buy-button:active {
     background-color: var(--basic-greendark);
-    box-shadow: 0px 3px 0px var(--basic-shadowgreen);   
+    box-shadow: 0px 3px 0px var(--basic-shadowgreen);
+     
 }
 
 .bookmark-button:active {
@@ -1273,19 +1295,23 @@ input[type="radio"].visually-hidden {
 }
 
 .img-wrap {
-   display: flex;
-   width: 184px;
-   height: 164px;
-   margin: 0;
-   padding: 0;
-   margin-top: 8px;
-   margin-bottom: 8px;
-   margin-left: 18px;
-   margin-right: 18px;
-   justify-content: center;
-   align-items: center;
-   background-color: var(--basic-wight);
+    width: 100%;
+    height: 164px;
+    margin: 0;
+    padding: 0;
+    margin-top: 8px;
+    margin-bottom: 7px;
+    background-color: var(--basic-wight);
+    position: relative;
 }
+
+.img-wrap img {
+    position: absolute;
+    top: 46%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+}
+
 
 .catalog-card-title {
     padding: 0px;
@@ -1317,7 +1343,7 @@ input[type="radio"].visually-hidden {
     text-align: center;
     padding: 0px;
     margin: 0px;
-    margin-bottom: 13px;    
+    margin-bottom: 12px;    
 }
 
 .catalog-card-price-not {
@@ -1357,7 +1383,7 @@ input[type="radio"].visually-hidden {
     padding: 0;
     margin-left: 20px;
     margin-bottom: 59px;
-    margin-top: 47px;   
+    margin-top: 46px;   
 }
 
 .page-item a {
@@ -1426,6 +1452,21 @@ input[type="radio"].visually-hidden {
     transform: translate(-50%, -50%);
 }
 
+.manufacturer-makita img {
+    left: 49%;
+    top: 48%;
+}
+
+.manufacturer-dewalt img {
+    left: 50%;
+    top: 48%;
+}
+
+.manufacturer-interscol img {
+    left: 49%;
+    top: 45%;
+}
+
 .popular-manufacturers-item:hover,
 .popular-manufacturers-item:focus {
     box-shadow: 0px 4px 20px var(--special-shadow);
@@ -1468,7 +1509,6 @@ input[type="radio"].visually-hidden {
 
 .services-container {
     display: flex;
-    flex: start;
     flex-wrap: wrap;
 }
 
@@ -1477,7 +1517,19 @@ input[type="radio"].visually-hidden {
     margin: 0;
     padding: 0;
     padding-bottom: 25px;
+    position: relative;
 }
+
+.services-list::after {
+    content: "";
+    position: absolute;
+    background-image: url(../img/border_servis.png);
+    top: -45px;
+    right: 0px;
+    width: 10px;
+    height: 279px;
+}
+
 
 .services-item {
     font-weight: bold;
@@ -1501,8 +1553,8 @@ input[type="radio"].visually-hidden {
     background-color: var(--basic-grey);
     color: var(--basic-wight);
     border: none;
-    border-top: 1px solid var(--basic-black);
-    border-bottom: 1px solid var(--basic-black);
+    border-top: 1px solid var(--special-grey-top-border);
+    border-bottom: 1px solid var(--special-grey);
 }
 
 .services-item button:focus,
@@ -1864,7 +1916,7 @@ input[type="radio"].visually-hidden {
     line-height: 18px;
     padding: 0px;
     margin: 0px;
-    padding-top: 36px;
+    padding-top: 35px;
     padding-bottom: 35px;
 }
 
@@ -1910,8 +1962,9 @@ input[type="radio"].visually-hidden {
 
 .social-button {
     list-style: none;
-    width: 44px;
-    height: 44px;
+    margin-right: 3px;
+    width: 41px;
+    height: 41px;
     text-align: center;
     background-color: var(--border-social);
     border-radius: 50%;
