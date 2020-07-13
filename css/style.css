@@ -193,7 +193,7 @@ input[type="radio"].visually-hidden {
 }
 
 .basket-header::before {
-    background-image: url(../img/basket-header_icon.svg);
+    background-image: url(../img/basket_header_icon.svg);
     width: 15px;
     height: 15px;
 }
