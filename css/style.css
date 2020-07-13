@@ -1239,7 +1239,7 @@ input[type="radio"].visually-hidden {
     position: absolute;
     left: 28px;
     top: 11px;
-    background-image: url(../img/basket-header_icon.svg);
+    background-image: url(../img/basket_header_icon.svg);
     background-position: center;
     background-repeat: no-repeat;
     width: 15px;
