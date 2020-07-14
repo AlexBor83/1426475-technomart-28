@@ -702,6 +702,25 @@ input[type="radio"].visually-hidden {
     border: 2px solid var(--basic-wight);
 }
 
+.button-slider-arrow {
+    padding: 0;
+    width: 22px;
+    height: 40px;
+    background-image: url(../img/arrow_icon.svg);
+    background-color: transparent;
+    border: none;
+    outline: none;    
+    cursor: pointer;
+    position: absolute;
+    left: 25px;
+    top: 122px;
+}
+
+.back-slider-arrow {
+    left: 580px;
+    transform: rotate(180deg);
+}
+
 /**breadcrumbs*/
 
 .breadcrumbs-list {
